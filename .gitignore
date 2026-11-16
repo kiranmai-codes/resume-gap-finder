@@ -1,0 +1,10 @@
+.env
+jobs.db
+*.log
+outputs/
+jobs.db
+.env
+*.pyc
+__pycache__/
+.naukri_scraper_profile/
+.naukri_diagnostic_profile/

@@ -1,0 +1,11 @@
+discovery_family,mode,search_url
+Software Developer,Fresher Query,https://www.foundit.in/search/software-developer-jobs?query=software%20developer&queryEntity=Software%20Developer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Software Engineer,Fresher Query,https://www.foundit.in/search/software-engineer-jobs?query=software%20engineer&queryEntity=Software%20Engineer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Software Developer Fresher,Expanded Fresher Query,https://www.foundit.in/search/software-developer-jobs?query=software%20developer%20fresher&queryEntity=Software%20Developer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Software Engineer Fresher,Expanded Fresher Query,https://www.foundit.in/search/software-engineer-jobs?query=software%20engineer%20fresher&queryEntity=Software%20Engineer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Software Trainee,Discovery Search,https://www.foundit.in/search/software-trainee-jobs
+Junior Developers,Discovery Search,https://www.foundit.in/search/junior-developers-jobs
+Trainee Software Engineer,Expanded Fresher Query,https://www.foundit.in/search/software-engineer-jobs?query=trainee%20software%20engineer&queryEntity=Software%20Engineer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Graduate Software Developer,Expanded Fresher Query,https://www.foundit.in/search/software-developer-jobs?query=graduate%20software%20developer&queryEntity=Software%20Developer%3ADESIGNATION&experienceRanges=0~0&experience=0&queryDerived=true
+Junior Software Developer,Expanded Fresher Query,https://www.foundit.in/search/junior%20software%20developer-jobs?query=junior%20software%20developer&queryDerived=true
+Junior Software Engineer,Expanded Fresher Query,https://www.foundit.in/search/junior%20software%20engineer-jobs?query=junior%20software%20engineer&queryDerived=true

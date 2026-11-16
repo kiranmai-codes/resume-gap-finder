@@ -1,0 +1,29 @@
+MAYA SHARMA
+maya.sharma@email.com | github.com/mayasharma | Bangalore, India
+
+EDUCATION
+B.Tech Computer Science, VIT Vellore, 2025
+GPA: 7.8/10
+
+SKILLS
+Languages: Java, Python
+Frontend: React, HTML, CSS
+Database: MySQL
+Tools: Git, VS Code
+
+PROJECTS
+1. Student Portal (Java + Spring Boot)
+   Built a REST API for a student records system with role-based authentication.
+   Used Spring Boot, Java, MySQL. Deployed on Heroku.
+
+2. Personal Blog (React)
+   Built a personal blog with React that fetches posts from a JSON API.
+   Included a comment system stored in localStorage.
+
+EXPERIENCE
+Summer Internship at Infosys (Jun-Aug 2024)
+Worked on a backend module in Java. Fixed 15 bugs in the ticketing system.
+
+ACHIEVEMENTS
+- 3rd place in college hackathon 2024
+- LeetCode: 200 problems solved
