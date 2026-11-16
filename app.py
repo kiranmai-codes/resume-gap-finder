@@ -172,6 +172,27 @@ PROJECT_IDEAS = {
 }
 
 # ============================================================
+# Implied Skills Logic
+# ============================================================
+IMPLIED_SKILLS = {
+    "GitHub": ["Git"],
+    "GitLab": ["Git"],
+    "React": ["JavaScript"],
+    "Angular": ["JavaScript", "TypeScript"],
+    "Vue.js": ["JavaScript"],
+    "Next.js": ["JavaScript", "React"],
+    "Node.js": ["JavaScript"],
+    "Express.js": ["Node.js"],
+    "Django": ["Python"],
+    "Flask": ["Python"],
+    "FastAPI": ["Python"],
+    "Spring": ["Java"],
+    "Spring Boot": ["Java", "Spring"],
+    ".NET": ["C#"],
+    "ASP.NET": ["C#", ".NET"],
+}
+
+# ============================================================
 # UI Layout
 # ============================================================
 def main():
@@ -233,8 +254,18 @@ def main():
             st.error("Couldn't extract text from your resume. Try a text version.")
             return
 
+                # Extract skills normally
         resume_skills = extract_skills(resume_text, aliases)
-
+        
+        # Apply implied skills logic
+        implied_added = []
+        for skill in list(resume_skills.keys()):
+            if skill in IMPLIED_SKILLS:
+                for implied_skill in IMPLIED_SKILLS[skill]:
+                    if implied_skill not in resume_skills:
+                        resume_skills[implied_skill] = True
+                        implied_added.append(implied_skill)
+                        
         if role_choice.startswith("All software"):
             benchmark_techs = artifact["technologies"]
             denominator = artifact["benchmark_size"]
