@@ -1,696 +1,696 @@
 {
-  "benchmark_size": 232,
-  "confirmed_tier": 98,
-  "probable_tier": 134,
-  "unique_companies": 199,
+  "benchmark_size": 255,
+  "confirmed_tier": 110,
+  "probable_tier": 145,
+  "unique_companies": 219,
   "portal_distribution": {
     "Foundit": 26,
     "Indeed": 38,
     "JobSpy": 33,
-    "Naukri": 135
+    "Naukri": 158
   },
   "role_family_distribution": [
     {
       "__role_family": "Backend",
-      "job_count": 69,
-      "job_share": 0.2974137931034483
+      "job_count": 76,
+      "job_share": 0.2980392156862745
     },
     {
       "__role_family": "DevOps / Infrastructure",
-      "job_count": 1,
-      "job_share": 0.004310344827586207
+      "job_count": 2,
+      "job_share": 0.00784313725490196
     },
     {
       "__role_family": "Frontend",
-      "job_count": 20,
-      "job_share": 0.08620689655172414
+      "job_count": 27,
+      "job_share": 0.10588235294117647
     },
     {
       "__role_family": "Full Stack",
-      "job_count": 35,
-      "job_share": 0.15086206896551724
+      "job_count": 37,
+      "job_share": 0.1450980392156863
     },
     {
       "__role_family": "General Software Development",
-      "job_count": 86,
-      "job_share": 0.3706896551724138
+      "job_count": 92,
+      "job_share": 0.3607843137254902
     },
     {
       "__role_family": "Mobile",
       "job_count": 19,
-      "job_share": 0.08189655172413793
+      "job_share": 0.07450980392156863
     },
     {
       "__role_family": "QA / Testing",
       "job_count": 2,
-      "job_share": 0.008620689655172414
+      "job_share": 0.00784313725490196
     }
   ],
   "technologies": [
     {
-      "technology": "Java",
-      "job_count": 94,
-      "job_share": 0.4051724137931034,
-      "benchmark_share": 0.36637931034482757,
+      "technology": "JavaScript",
+      "job_count": 101,
+      "job_share": 0.396078431372549,
+      "benchmark_share": 0.3607843137254902,
       "priority": "high",
       "stability_tier": "high"
     },
     {
-      "technology": "JavaScript",
-      "job_count": 89,
-      "job_share": 0.38362068965517243,
-      "benchmark_share": 0.34913793103448276,
+      "technology": "Java",
+      "job_count": 99,
+      "job_share": 0.38823529411764707,
+      "benchmark_share": 0.35294117647058826,
       "priority": "high",
       "stability_tier": "high"
     },
     {
       "technology": "Python",
-      "job_count": 81,
-      "job_share": 0.34913793103448276,
-      "benchmark_share": 0.31896551724137934,
+      "job_count": 85,
+      "job_share": 0.3333333333333333,
+      "benchmark_share": 0.3058823529411765,
       "priority": "high",
       "stability_tier": "high"
     },
     {
       "technology": "HTML",
-      "job_count": 78,
-      "job_share": 0.33620689655172414,
-      "benchmark_share": 0.2974137931034483,
+      "job_count": 87,
+      "job_share": 0.3411764705882353,
+      "benchmark_share": 0.2980392156862745,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "SQL",
-      "job_count": 71,
-      "job_share": 0.30603448275862066,
-      "benchmark_share": 0.2801724137931034,
-      "priority": "medium",
-      "stability_tier": "high"
-    },
-    {
-      "technology": "REST API",
-      "job_count": 72,
-      "job_share": 0.3103448275862069,
-      "benchmark_share": 0.2672413793103448,
+      "job_count": 80,
+      "job_share": 0.3137254901960784,
+      "benchmark_share": 0.2823529411764706,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "CSS",
-      "job_count": 67,
-      "job_share": 0.28879310344827586,
-      "benchmark_share": 0.25862068965517243,
+      "job_count": 77,
+      "job_share": 0.30196078431372547,
+      "benchmark_share": 0.27058823529411763,
+      "priority": "medium",
+      "stability_tier": "high"
+    },
+    {
+      "technology": "REST API",
+      "job_count": 75,
+      "job_share": 0.29411764705882354,
+      "benchmark_share": 0.2549019607843137,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "Git",
-      "job_count": 70,
-      "job_share": 0.3017241379310345,
-      "benchmark_share": 0.21120689655172414,
+      "job_count": 73,
+      "job_share": 0.28627450980392155,
+      "benchmark_share": 0.2,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "React",
-      "job_count": 53,
-      "job_share": 0.22844827586206898,
-      "benchmark_share": 0.1853448275862069,
-      "priority": "medium",
-      "stability_tier": "high"
-    },
-    {
-      "technology": "OOP",
-      "job_count": 45,
-      "job_share": 0.1939655172413793,
-      "benchmark_share": 0.16379310344827586,
+      "job_count": 55,
+      "job_share": 0.21568627450980393,
+      "benchmark_share": 0.17647058823529413,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "MySQL",
-      "job_count": 51,
-      "job_share": 0.21982758620689655,
-      "benchmark_share": 0.15086206896551724,
+      "job_count": 59,
+      "job_share": 0.23137254901960785,
+      "benchmark_share": 0.16470588235294117,
+      "priority": "medium",
+      "stability_tier": "high"
+    },
+    {
+      "technology": "OOP",
+      "job_count": 47,
+      "job_share": 0.1843137254901961,
+      "benchmark_share": 0.1568627450980392,
       "priority": "medium",
       "stability_tier": "high"
     },
     {
       "technology": "Node.js",
       "job_count": 40,
-      "job_share": 0.1724137931034483,
-      "benchmark_share": 0.14655172413793102,
+      "job_share": 0.1568627450980392,
+      "benchmark_share": 0.13333333333333333,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "MongoDB",
       "job_count": 41,
-      "job_share": 0.17672413793103448,
-      "benchmark_share": 0.12931034482758622,
+      "job_share": 0.1607843137254902,
+      "benchmark_share": 0.11764705882352941,
+      "priority": "low",
+      "stability_tier": "high"
+    },
+    {
+      "technology": "GitHub",
+      "job_count": 43,
+      "job_share": 0.16862745098039217,
+      "benchmark_share": 0.10588235294117647,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "Spring",
       "job_count": 31,
-      "job_share": 0.1336206896551724,
-      "benchmark_share": 0.11637931034482758,
+      "job_share": 0.12156862745098039,
+      "benchmark_share": 0.10588235294117647,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "PostgreSQL",
       "job_count": 34,
-      "job_share": 0.14655172413793102,
-      "benchmark_share": 0.11206896551724138,
+      "job_share": 0.13333333333333333,
+      "benchmark_share": 0.10196078431372549,
       "priority": "low",
       "stability_tier": "high"
     },
     {
-      "technology": "GitHub",
-      "job_count": 41,
-      "job_share": 0.17672413793103448,
-      "benchmark_share": 0.10775862068965517,
+      "technology": "PHP",
+      "job_count": 28,
+      "job_share": 0.10980392156862745,
+      "benchmark_share": 0.09803921568627451,
+      "priority": "low",
+      "stability_tier": "high"
+    },
+    {
+      "technology": "Angular",
+      "job_count": 30,
+      "job_share": 0.11764705882352941,
+      "benchmark_share": 0.09411764705882353,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "Django",
       "job_count": 28,
-      "job_share": 0.1206896551724138,
-      "benchmark_share": 0.09913793103448276,
-      "priority": "low",
-      "stability_tier": "high"
-    },
-    {
-      "technology": "Angular",
-      "job_count": 28,
-      "job_share": 0.1206896551724138,
-      "benchmark_share": 0.09482758620689655,
+      "job_share": 0.10980392156862745,
+      "benchmark_share": 0.09019607843137255,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "Microservices",
       "job_count": 22,
-      "job_share": 0.09482758620689655,
-      "benchmark_share": 0.09482758620689655,
+      "job_share": 0.08627450980392157,
+      "benchmark_share": 0.08627450980392157,
+      "priority": "low",
+      "stability_tier": "high"
+    },
+    {
+      "technology": ".NET",
+      "job_count": 22,
+      "job_share": 0.08627450980392157,
+      "benchmark_share": 0.08235294117647059,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Docker",
       "job_count": 29,
-      "job_share": 0.125,
-      "benchmark_share": 0.08620689655172414,
+      "job_share": 0.11372549019607843,
+      "benchmark_share": 0.0784313725490196,
       "priority": "low",
       "stability_tier": "high"
     },
     {
       "technology": "Android",
-      "job_count": 21,
-      "job_share": 0.09051724137931035,
-      "benchmark_share": 0.08189655172413793,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": ".NET",
-      "job_count": 18,
-      "job_share": 0.07758620689655173,
-      "benchmark_share": 0.07327586206896551,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "PHP",
-      "job_count": 19,
-      "job_share": 0.08189655172413793,
-      "benchmark_share": 0.06896551724137931,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "AWS",
-      "job_count": 29,
-      "job_share": 0.125,
-      "benchmark_share": 0.06465517241379311,
-      "priority": "low",
-      "stability_tier": "high"
-    },
-    {
-      "technology": "Azure",
-      "job_count": 27,
-      "job_share": 0.11637931034482758,
-      "benchmark_share": 0.06465517241379311,
-      "priority": "low",
-      "stability_tier": "high"
-    },
-    {
-      "technology": "Flask",
-      "job_count": 17,
-      "job_share": 0.07327586206896551,
-      "benchmark_share": 0.0603448275862069,
+      "job_count": 22,
+      "job_share": 0.08627450980392157,
+      "benchmark_share": 0.0784313725490196,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Microsoft SQL Server",
-      "job_count": 17,
-      "job_share": 0.07327586206896551,
-      "benchmark_share": 0.0603448275862069,
+      "job_count": 20,
+      "job_share": 0.0784313725490196,
+      "benchmark_share": 0.06666666666666667,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
+      "technology": "jQuery",
+      "job_count": 20,
+      "job_share": 0.0784313725490196,
+      "benchmark_share": 0.06666666666666667,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "AWS",
+      "job_count": 30,
+      "job_share": 0.11764705882352941,
+      "benchmark_share": 0.06274509803921569,
+      "priority": "low",
+      "stability_tier": "high"
+    },
+    {
+      "technology": "Azure",
+      "job_count": 28,
+      "job_share": 0.10980392156862745,
+      "benchmark_share": 0.06274509803921569,
+      "priority": "low",
+      "stability_tier": "high"
+    },
+    {
       "technology": "C",
-      "job_count": 22,
-      "job_share": 0.09482758620689655,
-      "benchmark_share": 0.05603448275862069,
+      "job_count": 26,
+      "job_share": 0.10196078431372549,
+      "benchmark_share": 0.058823529411764705,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "Flask",
+      "job_count": 17,
+      "job_share": 0.06666666666666667,
+      "benchmark_share": 0.054901960784313725,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "TypeScript",
       "job_count": 15,
-      "job_share": 0.06465517241379311,
-      "benchmark_share": 0.05603448275862069,
+      "job_share": 0.058823529411764705,
+      "benchmark_share": 0.050980392156862744,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Hibernate",
       "job_count": 17,
-      "job_share": 0.07327586206896551,
-      "benchmark_share": 0.05172413793103448,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "jQuery",
-      "job_count": 14,
-      "job_share": 0.0603448275862069,
-      "benchmark_share": 0.05172413793103448,
+      "job_share": 0.06666666666666667,
+      "benchmark_share": 0.047058823529411764,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "DSA",
       "job_count": 13,
-      "job_share": 0.05603448275862069,
-      "benchmark_share": 0.05172413793103448,
+      "job_share": 0.050980392156862744,
+      "benchmark_share": 0.047058823529411764,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Kubernetes",
       "job_count": 18,
-      "job_share": 0.07758620689655173,
-      "benchmark_share": 0.04310344827586207,
+      "job_share": 0.07058823529411765,
+      "benchmark_share": 0.0392156862745098,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "SDLC",
+      "job_count": 16,
+      "job_share": 0.06274509803921569,
+      "benchmark_share": 0.0392156862745098,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "MVC",
+      "job_count": 14,
+      "job_share": 0.054901960784313725,
+      "benchmark_share": 0.0392156862745098,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "ASP.NET",
+      "job_count": 11,
+      "job_share": 0.043137254901960784,
+      "benchmark_share": 0.0392156862745098,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Express.js",
       "job_count": 11,
-      "job_share": 0.04741379310344827,
-      "benchmark_share": 0.04310344827586207,
+      "job_share": 0.043137254901960784,
+      "benchmark_share": 0.0392156862745098,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "FastAPI",
       "job_count": 11,
-      "job_share": 0.04741379310344827,
-      "benchmark_share": 0.04310344827586207,
+      "job_share": 0.043137254901960784,
+      "benchmark_share": 0.0392156862745098,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "Bootstrap",
+      "job_count": 12,
+      "job_share": 0.047058823529411764,
+      "benchmark_share": 0.03529411764705882,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Ruby",
       "job_count": 9,
-      "job_share": 0.03879310344827586,
-      "benchmark_share": 0.03879310344827586,
+      "job_share": 0.03529411764705882,
+      "benchmark_share": 0.03529411764705882,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Google Cloud",
       "job_count": 17,
-      "job_share": 0.07327586206896551,
-      "benchmark_share": 0.034482758620689655,
+      "job_share": 0.06666666666666667,
+      "benchmark_share": 0.03137254901960784,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "LLM",
       "job_count": 13,
-      "job_share": 0.05603448275862069,
-      "benchmark_share": 0.03017241379310345,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "SDLC",
-      "job_count": 12,
-      "job_share": 0.05172413793103448,
-      "benchmark_share": 0.03017241379310345,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "ASP.NET",
-      "job_count": 7,
-      "job_share": 0.03017241379310345,
-      "benchmark_share": 0.03017241379310345,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "MVC",
-      "job_count": 9,
-      "job_share": 0.03879310344827586,
-      "benchmark_share": 0.02586206896551724,
+      "job_share": 0.050980392156862744,
+      "benchmark_share": 0.027450980392156862,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Jenkins",
       "job_count": 8,
-      "job_share": 0.034482758620689655,
-      "benchmark_share": 0.02586206896551724,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "Bootstrap",
-      "job_count": 8,
-      "job_share": 0.034482758620689655,
-      "benchmark_share": 0.021551724137931036,
+      "job_share": 0.03137254901960784,
+      "benchmark_share": 0.023529411764705882,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Next.js",
       "job_count": 7,
-      "job_share": 0.03017241379310345,
-      "benchmark_share": 0.021551724137931036,
+      "job_share": 0.027450980392156862,
+      "benchmark_share": 0.0196078431372549,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "JUnit",
       "job_count": 6,
-      "job_share": 0.02586206896551724,
-      "benchmark_share": 0.021551724137931036,
+      "job_share": 0.023529411764705882,
+      "benchmark_share": 0.0196078431372549,
       "priority": "low",
       "stability_tier": "medium"
     },
     {
       "technology": "Vue.js",
       "job_count": 5,
-      "job_share": 0.021551724137931036,
-      "benchmark_share": 0.021551724137931036,
+      "job_share": 0.0196078431372549,
+      "benchmark_share": 0.0196078431372549,
       "priority": "low",
       "stability_tier": "low"
+    },
+    {
+      "technology": "Machine Learning",
+      "job_count": 10,
+      "job_share": 0.0392156862745098,
+      "benchmark_share": 0.01568627450980392,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "Prompt Engineering",
+      "job_count": 8,
+      "job_share": 0.03137254901960784,
+      "benchmark_share": 0.01568627450980392,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "Linux",
+      "job_count": 7,
+      "job_share": 0.027450980392156862,
+      "benchmark_share": 0.01568627450980392,
+      "priority": "low",
+      "stability_tier": "medium"
     },
     {
       "technology": "JSP",
       "job_count": 6,
-      "job_share": 0.02586206896551724,
-      "benchmark_share": 0.017241379310344827,
+      "job_share": 0.023529411764705882,
+      "benchmark_share": 0.01568627450980392,
       "priority": "low",
-      "stability_tier": "low"
+      "stability_tier": "medium"
     },
     {
       "technology": "Redis",
       "job_count": 6,
-      "job_share": 0.02586206896551724,
-      "benchmark_share": 0.017241379310344827,
+      "job_share": 0.023529411764705882,
+      "benchmark_share": 0.01568627450980392,
       "priority": "low",
-      "stability_tier": "low"
+      "stability_tier": "medium"
     },
     {
       "technology": "Selenium",
       "job_count": 5,
-      "job_share": 0.021551724137931036,
-      "benchmark_share": 0.017241379310344827,
+      "job_share": 0.0196078431372549,
+      "benchmark_share": 0.01568627450980392,
+      "priority": "low",
+      "stability_tier": "low"
+    },
+    {
+      "technology": "Excel",
+      "job_count": 4,
+      "job_share": 0.01568627450980392,
+      "benchmark_share": 0.01568627450980392,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Generative AI",
       "job_count": 9,
-      "job_share": 0.03879310344827586,
-      "benchmark_share": 0.01293103448275862,
+      "job_share": 0.03529411764705882,
+      "benchmark_share": 0.011764705882352941,
       "priority": "low",
       "stability_tier": "medium"
-    },
-    {
-      "technology": "Machine Learning",
-      "job_count": 9,
-      "job_share": 0.03879310344827586,
-      "benchmark_share": 0.01293103448275862,
-      "priority": "low",
-      "stability_tier": "medium"
-    },
-    {
-      "technology": "Prompt Engineering",
-      "job_count": 7,
-      "job_share": 0.03017241379310345,
-      "benchmark_share": 0.01293103448275862,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "Linux",
-      "job_count": 6,
-      "job_share": 0.02586206896551724,
-      "benchmark_share": 0.01293103448275862,
-      "priority": "low",
-      "stability_tier": "low"
     },
     {
       "technology": "GitHub Actions",
       "job_count": 4,
-      "job_share": 0.017241379310344827,
-      "benchmark_share": 0.01293103448275862,
+      "job_share": 0.01568627450980392,
+      "benchmark_share": 0.011764705882352941,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Servlets",
       "job_count": 4,
-      "job_share": 0.017241379310344827,
-      "benchmark_share": 0.01293103448275862,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "Excel",
-      "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.01293103448275862,
+      "job_share": 0.01568627450980392,
+      "benchmark_share": 0.011764705882352941,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Pandas",
       "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.01293103448275862,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.011764705882352941,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "GraphQL",
       "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.00784313725490196,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Oracle",
       "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.00784313725490196,
+      "priority": "low",
+      "stability_tier": "low"
+    },
+    {
+      "technology": "Web API",
+      "job_count": 3,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.00784313725490196,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "GitLab",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00784313725490196,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "NumPy",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00784313725490196,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Rust",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00784313725490196,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "TensorFlow",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.008620689655172414,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00784313725490196,
+      "priority": "low",
+      "stability_tier": "low"
+    },
+    {
+      "technology": "C++",
+      "job_count": 7,
+      "job_share": 0.027450980392156862,
+      "benchmark_share": 0.00392156862745098,
+      "priority": "low",
+      "stability_tier": "medium"
+    },
+    {
+      "technology": "C#",
+      "job_count": 4,
+      "job_share": 0.01568627450980392,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Bash",
       "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Terraform",
       "job_count": 3,
-      "job_share": 0.01293103448275862,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.011764705882352941,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Deep Learning",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Go",
       "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.004310344827586207,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "Web API",
-      "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00784313725490196,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Cypress",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Elasticsearch",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "IIS",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "MS Access",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "OpenCV",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Playwright",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "PyTest",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Scikit-learn",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Tailwind CSS",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Visual Studio",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
-      "benchmark_share": 0.004310344827586207,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "C++",
-      "job_count": 4,
-      "job_share": 0.017241379310344827,
-      "benchmark_share": 0.0,
-      "priority": "low",
-      "stability_tier": "low"
-    },
-    {
-      "technology": "C#",
-      "job_count": 2,
-      "job_share": 0.008620689655172414,
-      "benchmark_share": 0.0,
+      "job_share": 0.00392156862745098,
+      "benchmark_share": 0.00392156862745098,
       "priority": "low",
       "stability_tier": "low"
     },
     {
       "technology": "Odoo",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
       "benchmark_share": 0.0,
       "priority": "low",
       "stability_tier": "low"
@@ -698,7 +698,7 @@
     {
       "technology": "Power BI",
       "job_count": 1,
-      "job_share": 0.004310344827586207,
+      "job_share": 0.00392156862745098,
       "benchmark_share": 0.0,
       "priority": "low",
       "stability_tier": "low"
@@ -708,544 +708,544 @@
     "Backend": [
       {
         "technology": "Python",
-        "job_count": 32,
-        "job_share": 0.463768115942029,
-        "benchmark_share": 0.42028985507246375,
+        "job_count": 33,
+        "job_share": 0.4342105263157895,
+        "benchmark_share": 0.39473684210526316,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "SQL",
-        "job_count": 28,
-        "job_share": 0.4057971014492754,
-        "benchmark_share": 0.37681159420289856,
+        "job_count": 31,
+        "job_share": 0.40789473684210525,
+        "benchmark_share": 0.3815789473684211,
+        "priority": "high",
+        "stability_tier": "high"
+      },
+      {
+        "technology": "Java",
+        "job_count": 31,
+        "job_share": 0.40789473684210525,
+        "benchmark_share": 0.35526315789473684,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "REST API",
         "job_count": 27,
-        "job_share": 0.391304347826087,
-        "benchmark_share": 0.37681159420289856,
-        "priority": "high",
-        "stability_tier": "high"
-      },
-      {
-        "technology": "Java",
-        "job_count": 29,
-        "job_share": 0.42028985507246375,
-        "benchmark_share": 0.36231884057971014,
+        "job_share": 0.35526315789473684,
+        "benchmark_share": 0.34210526315789475,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "JavaScript",
-        "job_count": 23,
-        "job_share": 0.3333333333333333,
-        "benchmark_share": 0.2898550724637681,
+        "job_count": 24,
+        "job_share": 0.3157894736842105,
+        "benchmark_share": 0.27631578947368424,
         "priority": "medium",
         "stability_tier": "high"
       },
       {
         "technology": "Git",
         "job_count": 23,
-        "job_share": 0.3333333333333333,
-        "benchmark_share": 0.2463768115942029,
+        "job_share": 0.3026315789473684,
+        "benchmark_share": 0.2236842105263158,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "OOP",
         "job_count": 21,
-        "job_share": 0.30434782608695654,
-        "benchmark_share": 0.2463768115942029,
+        "job_share": 0.27631578947368424,
+        "benchmark_share": 0.2236842105263158,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "HTML",
-        "job_count": 18,
-        "job_share": 0.2608695652173913,
-        "benchmark_share": 0.2028985507246377,
+        "job_count": 20,
+        "job_share": 0.2631578947368421,
+        "benchmark_share": 0.21052631578947367,
         "priority": "medium",
-        "stability_tier": "medium"
+        "stability_tier": "high"
       },
       {
         "technology": "CSS",
-        "job_count": 17,
-        "job_share": 0.2463768115942029,
-        "benchmark_share": 0.2028985507246377,
+        "job_count": 19,
+        "job_share": 0.25,
+        "benchmark_share": 0.21052631578947367,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "MySQL",
-        "job_count": 20,
-        "job_share": 0.2898550724637681,
-        "benchmark_share": 0.18840579710144928,
+        "job_count": 21,
+        "job_share": 0.27631578947368424,
+        "benchmark_share": 0.17105263157894737,
         "priority": "medium",
-        "stability_tier": "medium"
+        "stability_tier": "high"
       },
       {
         "technology": "PostgreSQL",
         "job_count": 16,
-        "job_share": 0.2318840579710145,
-        "benchmark_share": 0.18840579710144928,
+        "job_share": 0.21052631578947367,
+        "benchmark_share": 0.17105263157894737,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Django",
         "job_count": 15,
-        "job_share": 0.21739130434782608,
-        "benchmark_share": 0.17391304347826086,
+        "job_share": 0.19736842105263158,
+        "benchmark_share": 0.15789473684210525,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Spring",
         "job_count": 14,
-        "job_share": 0.2028985507246377,
-        "benchmark_share": 0.17391304347826086,
+        "job_share": 0.18421052631578946,
+        "benchmark_share": 0.15789473684210525,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Docker",
         "job_count": 14,
-        "job_share": 0.2028985507246377,
-        "benchmark_share": 0.15942028985507245,
-        "priority": "medium",
+        "job_share": 0.18421052631578946,
+        "benchmark_share": 0.14473684210526316,
+        "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Node.js",
         "job_count": 11,
-        "job_share": 0.15942028985507245,
-        "benchmark_share": 0.15942028985507245,
-        "priority": "medium",
+        "job_share": 0.14473684210526316,
+        "benchmark_share": 0.14473684210526316,
+        "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "MongoDB",
         "job_count": 15,
-        "job_share": 0.21739130434782608,
-        "benchmark_share": 0.14492753623188406,
+        "job_share": 0.19736842105263158,
+        "benchmark_share": 0.13157894736842105,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Flask",
         "job_count": 12,
-        "job_share": 0.17391304347826086,
-        "benchmark_share": 0.14492753623188406,
+        "job_share": 0.15789473684210525,
+        "benchmark_share": 0.13157894736842105,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Microservices",
         "job_count": 10,
-        "job_share": 0.14492753623188406,
-        "benchmark_share": 0.14492753623188406,
+        "job_share": 0.13157894736842105,
+        "benchmark_share": 0.13157894736842105,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "GitHub",
         "job_count": 13,
-        "job_share": 0.18840579710144928,
-        "benchmark_share": 0.13043478260869565,
+        "job_share": 0.17105263157894737,
+        "benchmark_share": 0.11842105263157894,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "Microsoft SQL Server",
+        "job_count": 10,
+        "job_share": 0.13157894736842105,
+        "benchmark_share": 0.10526315789473684,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "AWS",
         "job_count": 13,
-        "job_share": 0.18840579710144928,
-        "benchmark_share": 0.10144927536231885,
+        "job_share": 0.17105263157894737,
+        "benchmark_share": 0.09210526315789473,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Hibernate",
         "job_count": 9,
-        "job_share": 0.13043478260869565,
-        "benchmark_share": 0.10144927536231885,
+        "job_share": 0.11842105263157894,
+        "benchmark_share": 0.09210526315789473,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Kubernetes",
         "job_count": 9,
-        "job_share": 0.13043478260869565,
-        "benchmark_share": 0.10144927536231885,
+        "job_share": 0.11842105263157894,
+        "benchmark_share": 0.09210526315789473,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": ".NET",
+        "job_count": 7,
+        "job_share": 0.09210526315789473,
+        "benchmark_share": 0.09210526315789473,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Azure",
         "job_count": 10,
-        "job_share": 0.14492753623188406,
-        "benchmark_share": 0.08695652173913043,
-        "priority": "low",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "Microsoft SQL Server",
-        "job_count": 8,
-        "job_share": 0.11594202898550725,
-        "benchmark_share": 0.08695652173913043,
+        "job_share": 0.13157894736842105,
+        "benchmark_share": 0.07894736842105263,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "DSA",
         "job_count": 7,
-        "job_share": 0.10144927536231885,
-        "benchmark_share": 0.08695652173913043,
+        "job_share": 0.09210526315789473,
+        "benchmark_share": 0.07894736842105263,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "FastAPI",
         "job_count": 6,
-        "job_share": 0.08695652173913043,
-        "benchmark_share": 0.08695652173913043,
-        "priority": "low",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": ".NET",
-        "job_count": 5,
-        "job_share": 0.07246376811594203,
-        "benchmark_share": 0.07246376811594203,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "JSP",
-        "job_count": 6,
-        "job_share": 0.08695652173913043,
-        "benchmark_share": 0.057971014492753624,
+        "job_share": 0.07894736842105263,
+        "benchmark_share": 0.07894736842105263,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "PHP",
+        "job_count": 6,
+        "job_share": 0.07894736842105263,
+        "benchmark_share": 0.06578947368421052,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "JSP",
+        "job_count": 6,
+        "job_share": 0.07894736842105263,
+        "benchmark_share": 0.05263157894736842,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "ASP.NET",
         "job_count": 5,
-        "job_share": 0.07246376811594203,
-        "benchmark_share": 0.057971014492753624,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.05263157894736842,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "React",
         "job_count": 5,
-        "job_share": 0.07246376811594203,
-        "benchmark_share": 0.057971014492753624,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.05263157894736842,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Express.js",
         "job_count": 4,
-        "job_share": 0.057971014492753624,
-        "benchmark_share": 0.057971014492753624,
+        "job_share": 0.05263157894736842,
+        "benchmark_share": 0.05263157894736842,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Ruby",
         "job_count": 4,
-        "job_share": 0.057971014492753624,
-        "benchmark_share": 0.057971014492753624,
+        "job_share": 0.05263157894736842,
+        "benchmark_share": 0.05263157894736842,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "MVC",
+        "job_count": 5,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.039473684210526314,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Redis",
         "job_count": 5,
-        "job_share": 0.07246376811594203,
-        "benchmark_share": 0.043478260869565216,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.039473684210526314,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "SDLC",
+        "job_count": 5,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.039473684210526314,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Servlets",
         "job_count": 4,
-        "job_share": 0.057971014492753624,
-        "benchmark_share": 0.043478260869565216,
+        "job_share": 0.05263157894736842,
+        "benchmark_share": 0.039473684210526314,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Pandas",
         "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.043478260869565216,
+        "job_share": 0.039473684210526314,
+        "benchmark_share": 0.039473684210526314,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "LLM",
         "job_count": 6,
-        "job_share": 0.08695652173913043,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.07894736842105263,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
+        "technology": "C",
+        "job_count": 5,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.02631578947368421,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
         "technology": "Google Cloud",
         "job_count": 5,
-        "job_share": 0.07246376811594203,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.06578947368421052,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Bootstrap",
         "job_count": 4,
-        "job_share": 0.057971014492753624,
-        "benchmark_share": 0.028985507246376812,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "MVC",
-        "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.05263157894736842,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Oracle",
         "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.028985507246376812,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "ASP.NET",
-        "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.039473684210526314,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "NumPy",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "TensorFlow",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.028985507246376812,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "TypeScript",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.028985507246376812,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "C",
-        "job_count": 4,
-        "job_share": 0.057971014492753624,
-        "benchmark_share": 0.014492753623188406,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "SDLC",
-        "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.02631578947368421,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "jQuery",
+        "job_count": 4,
+        "job_share": 0.05263157894736842,
+        "benchmark_share": 0.013157894736842105,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Machine Learning",
         "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.039473684210526314,
+        "benchmark_share": 0.013157894736842105,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Prompt Engineering",
+        "job_count": 3,
+        "job_share": 0.039473684210526314,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Go",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Jenkins",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Linux",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Selenium",
         "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.02631578947368421,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Android",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Angular",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Deep Learning",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Elasticsearch",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GitHub Actions",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GitLab",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GraphQL",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "IIS",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "JUnit",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "OpenCV",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "PyTest",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Rust",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Scikit-learn",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Visual Studio",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
-        "benchmark_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
+        "benchmark_share": 0.013157894736842105,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Generative AI",
         "job_count": 3,
-        "job_share": 0.043478260869565216,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Machine Learning",
-        "job_count": 2,
-        "job_share": 0.028985507246376812,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Prompt Engineering",
-        "job_count": 2,
-        "job_share": 0.028985507246376812,
+        "job_share": 0.039473684210526314,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1253,7 +1253,7 @@
       {
         "technology": "Bash",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1261,7 +1261,7 @@
       {
         "technology": "Odoo",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1269,7 +1269,7 @@
       {
         "technology": "Terraform",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1277,7 +1277,7 @@
       {
         "technology": "Web API",
         "job_count": 1,
-        "job_share": 0.014492753623188406,
+        "job_share": 0.013157894736842105,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1286,200 +1286,256 @@
     "Frontend": [
       {
         "technology": "HTML",
+        "job_count": 23,
+        "job_share": 0.8518518518518519,
+        "benchmark_share": 0.7777777777777778,
+        "priority": "high",
+        "stability_tier": "high"
+      },
+      {
+        "technology": "JavaScript",
         "job_count": 18,
-        "job_share": 0.9,
-        "benchmark_share": 0.8,
+        "job_share": 0.6666666666666666,
+        "benchmark_share": 0.5925925925925926,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "CSS",
-        "job_count": 12,
-        "job_share": 0.6,
-        "benchmark_share": 0.5,
+        "job_count": 17,
+        "job_share": 0.6296296296296297,
+        "benchmark_share": 0.5555555555555556,
         "priority": "high",
-        "stability_tier": "medium"
+        "stability_tier": "high"
       },
       {
-        "technology": "JavaScript",
-        "job_count": 12,
-        "job_share": 0.6,
-        "benchmark_share": 0.5,
-        "priority": "high",
+        "technology": "REST API",
+        "job_count": 9,
+        "job_share": 0.3333333333333333,
+        "benchmark_share": 0.25925925925925924,
+        "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "React",
-        "job_count": 8,
-        "job_share": 0.4,
-        "benchmark_share": 0.25,
+        "job_count": 9,
+        "job_share": 0.3333333333333333,
+        "benchmark_share": 0.2222222222222222,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
-        "technology": "REST API",
+        "technology": "PHP",
+        "job_count": 5,
+        "job_share": 0.18518518518518517,
+        "benchmark_share": 0.18518518518518517,
+        "priority": "medium",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "jQuery",
+        "job_count": 5,
+        "job_share": 0.18518518518518517,
+        "benchmark_share": 0.18518518518518517,
+        "priority": "medium",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "MySQL",
         "job_count": 6,
-        "job_share": 0.3,
-        "benchmark_share": 0.2,
-        "priority": "medium",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "Git",
-        "job_count": 3,
-        "job_share": 0.15,
-        "benchmark_share": 0.1,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Java",
-        "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.1,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Angular",
-        "job_count": 3,
-        "job_share": 0.15,
-        "benchmark_share": 0.05,
+        "job_share": 0.2222222222222222,
+        "benchmark_share": 0.14814814814814814,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Bootstrap",
+        "job_count": 5,
+        "job_share": 0.18518518518518517,
+        "benchmark_share": 0.14814814814814814,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Git",
+        "job_count": 5,
+        "job_share": 0.18518518518518517,
+        "benchmark_share": 0.14814814814814814,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "SQL",
+        "job_count": 5,
+        "job_share": 0.18518518518518517,
+        "benchmark_share": 0.14814814814814814,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "Java",
+        "job_count": 3,
+        "job_share": 0.1111111111111111,
+        "benchmark_share": 0.1111111111111111,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Angular",
+        "job_count": 4,
+        "job_share": 0.14814814814814814,
+        "benchmark_share": 0.07407407407407407,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "GitHub",
+        "job_count": 4,
+        "job_share": 0.14814814814814814,
+        "benchmark_share": 0.07407407407407407,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "MVC",
+        "job_count": 3,
+        "job_share": 0.1111111111111111,
+        "benchmark_share": 0.07407407407407407,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "OOP",
         "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.05,
+        "job_share": 0.07407407407407407,
+        "benchmark_share": 0.07407407407407407,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Docker",
         "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.05,
+        "job_share": 0.07407407407407407,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "MongoDB",
         "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.05,
+        "job_share": 0.07407407407407407,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
-        "technology": "SQL",
-        "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.05,
+        "technology": ".NET",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Azure",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Generative AI",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "LLM",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Linux",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Microservices",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Next.js",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "OOP",
-        "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Prompt Engineering",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Python",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "SDLC",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Spring",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Tailwind CSS",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Vue.js",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "jQuery",
-        "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.05,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "GitHub",
-        "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "MySQL",
-        "job_count": 2,
-        "job_share": 0.1,
-        "benchmark_share": 0.0,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.037037037037037035,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "PostgreSQL",
         "job_count": 2,
-        "job_share": 0.1,
+        "job_share": 0.07407407407407407,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1487,7 +1543,7 @@
       {
         "technology": "AWS",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1495,7 +1551,23 @@
       {
         "technology": "C",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.0,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "C#",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
+        "benchmark_share": 0.0,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "C++",
+        "job_count": 1,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1503,7 +1575,7 @@
       {
         "technology": "Express.js",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1511,7 +1583,7 @@
       {
         "technology": "GitHub Actions",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1519,7 +1591,7 @@
       {
         "technology": "GraphQL",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1527,7 +1599,7 @@
       {
         "technology": "Hibernate",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1535,7 +1607,7 @@
       {
         "technology": "Jenkins",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1543,15 +1615,7 @@
       {
         "technology": "Kubernetes",
         "job_count": 1,
-        "job_share": 0.05,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "MVC",
-        "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1559,7 +1623,7 @@
       {
         "technology": "Node.js",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1567,7 +1631,7 @@
       {
         "technology": "TypeScript",
         "job_count": 1,
-        "job_share": 0.05,
+        "job_share": 0.037037037037037035,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1576,400 +1640,408 @@
     "Full Stack": [
       {
         "technology": "JavaScript",
-        "job_count": 19,
-        "job_share": 0.5428571428571428,
-        "benchmark_share": 0.4857142857142857,
+        "job_count": 21,
+        "job_share": 0.5675675675675675,
+        "benchmark_share": 0.4864864864864865,
         "priority": "high",
-        "stability_tier": "medium"
+        "stability_tier": "high"
       },
       {
         "technology": "React",
         "job_count": 21,
-        "job_share": 0.6,
-        "benchmark_share": 0.45714285714285713,
+        "job_share": 0.5675675675675675,
+        "benchmark_share": 0.43243243243243246,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "CSS",
-        "job_count": 16,
-        "job_share": 0.45714285714285713,
-        "benchmark_share": 0.45714285714285713,
+        "job_count": 17,
+        "job_share": 0.4594594594594595,
+        "benchmark_share": 0.43243243243243246,
         "priority": "high",
         "stability_tier": "medium"
       },
       {
         "technology": "HTML",
-        "job_count": 16,
-        "job_share": 0.45714285714285713,
-        "benchmark_share": 0.45714285714285713,
+        "job_count": 17,
+        "job_share": 0.4594594594594595,
+        "benchmark_share": 0.43243243243243246,
         "priority": "high",
         "stability_tier": "medium"
       },
       {
         "technology": "Java",
-        "job_count": 14,
-        "job_share": 0.4,
-        "benchmark_share": 0.4,
+        "job_count": 16,
+        "job_share": 0.43243243243243246,
+        "benchmark_share": 0.43243243243243246,
         "priority": "high",
         "stability_tier": "medium"
       },
       {
         "technology": "Node.js",
         "job_count": 17,
-        "job_share": 0.4857142857142857,
-        "benchmark_share": 0.37142857142857144,
+        "job_share": 0.4594594594594595,
+        "benchmark_share": 0.35135135135135137,
+        "priority": "high",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "Python",
+        "job_count": 15,
+        "job_share": 0.40540540540540543,
+        "benchmark_share": 0.35135135135135137,
         "priority": "high",
         "stability_tier": "medium"
       },
       {
         "technology": "REST API",
         "job_count": 13,
-        "job_share": 0.37142857142857144,
-        "benchmark_share": 0.34285714285714286,
-        "priority": "high",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "Python",
-        "job_count": 13,
-        "job_share": 0.37142857142857144,
-        "benchmark_share": 0.3142857142857143,
+        "job_share": 0.35135135135135137,
+        "benchmark_share": 0.32432432432432434,
         "priority": "high",
         "stability_tier": "medium"
       },
       {
         "technology": "Git",
-        "job_count": 15,
-        "job_share": 0.42857142857142855,
-        "benchmark_share": 0.2857142857142857,
+        "job_count": 16,
+        "job_share": 0.43243243243243246,
+        "benchmark_share": 0.2702702702702703,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Angular",
         "job_count": 11,
-        "job_share": 0.3142857142857143,
-        "benchmark_share": 0.2571428571428571,
+        "job_share": 0.2972972972972973,
+        "benchmark_share": 0.24324324324324326,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "GitHub",
         "job_count": 11,
-        "job_share": 0.3142857142857143,
-        "benchmark_share": 0.2571428571428571,
+        "job_share": 0.2972972972972973,
+        "benchmark_share": 0.24324324324324326,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "SQL",
-        "job_count": 9,
-        "job_share": 0.2571428571428571,
-        "benchmark_share": 0.22857142857142856,
+        "job_count": 10,
+        "job_share": 0.2702702702702703,
+        "benchmark_share": 0.21621621621621623,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "MongoDB",
         "job_count": 12,
-        "job_share": 0.34285714285714286,
-        "benchmark_share": 0.2,
+        "job_share": 0.32432432432432434,
+        "benchmark_share": 0.1891891891891892,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Spring",
         "job_count": 7,
-        "job_share": 0.2,
-        "benchmark_share": 0.2,
+        "job_share": 0.1891891891891892,
+        "benchmark_share": 0.1891891891891892,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "MySQL",
         "job_count": 12,
-        "job_share": 0.34285714285714286,
-        "benchmark_share": 0.17142857142857143,
+        "job_share": 0.32432432432432434,
+        "benchmark_share": 0.16216216216216217,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "TypeScript",
         "job_count": 6,
-        "job_share": 0.17142857142857143,
-        "benchmark_share": 0.14285714285714285,
+        "job_share": 0.16216216216216217,
+        "benchmark_share": 0.13513513513513514,
         "priority": "low",
-        "stability_tier": "medium"
+        "stability_tier": "low"
       },
       {
         "technology": "Microservices",
         "job_count": 5,
-        "job_share": 0.14285714285714285,
-        "benchmark_share": 0.14285714285714285,
+        "job_share": 0.13513513513513514,
+        "benchmark_share": 0.13513513513513514,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "PHP",
         "job_count": 5,
-        "job_share": 0.14285714285714285,
-        "benchmark_share": 0.14285714285714285,
+        "job_share": 0.13513513513513514,
+        "benchmark_share": 0.13513513513513514,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "PostgreSQL",
         "job_count": 5,
-        "job_share": 0.14285714285714285,
-        "benchmark_share": 0.14285714285714285,
+        "job_share": 0.13513513513513514,
+        "benchmark_share": 0.13513513513513514,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "AWS",
         "job_count": 5,
-        "job_share": 0.14285714285714285,
-        "benchmark_share": 0.11428571428571428,
+        "job_share": 0.13513513513513514,
+        "benchmark_share": 0.10810810810810811,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Azure",
         "job_count": 5,
-        "job_share": 0.14285714285714285,
-        "benchmark_share": 0.11428571428571428,
+        "job_share": 0.13513513513513514,
+        "benchmark_share": 0.10810810810810811,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Docker",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.11428571428571428,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.10810810810810811,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Express.js",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.11428571428571428,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.10810810810810811,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "OOP",
+        "job_count": 4,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.10810810810810811,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Ruby",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.11428571428571428,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.10810810810810811,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Django",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Google Cloud",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Next.js",
         "job_count": 4,
-        "job_share": 0.11428571428571428,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.10810810810810811,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "JUnit",
         "job_count": 3,
-        "job_share": 0.08571428571428572,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.08108108108108109,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Jenkins",
         "job_count": 3,
-        "job_share": 0.08571428571428572,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.08108108108108109,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Kubernetes",
         "job_count": 3,
-        "job_share": 0.08571428571428572,
-        "benchmark_share": 0.08571428571428572,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "OOP",
-        "job_count": 3,
-        "job_share": 0.08571428571428572,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.08108108108108109,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Vue.js",
         "job_count": 3,
-        "job_share": 0.08571428571428572,
-        "benchmark_share": 0.08571428571428572,
+        "job_share": 0.08108108108108109,
+        "benchmark_share": 0.08108108108108109,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": ".NET",
         "job_count": 2,
-        "job_share": 0.05714285714285714,
-        "benchmark_share": 0.05714285714285714,
+        "job_share": 0.05405405405405406,
+        "benchmark_share": 0.05405405405405406,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "FastAPI",
         "job_count": 2,
-        "job_share": 0.05714285714285714,
-        "benchmark_share": 0.05714285714285714,
+        "job_share": 0.05405405405405406,
+        "benchmark_share": 0.05405405405405406,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Hibernate",
         "job_count": 2,
-        "job_share": 0.05714285714285714,
-        "benchmark_share": 0.05714285714285714,
+        "job_share": 0.05405405405405406,
+        "benchmark_share": 0.05405405405405406,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Selenium",
         "job_count": 2,
-        "job_share": 0.05714285714285714,
-        "benchmark_share": 0.05714285714285714,
+        "job_share": 0.05405405405405406,
+        "benchmark_share": 0.05405405405405406,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "C",
+        "job_count": 2,
+        "job_share": 0.05405405405405406,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "ASP.NET",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Bootstrap",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Cypress",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Generative AI",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GitLab",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GraphQL",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "LLM",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Microsoft SQL Server",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Playwright",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Prompt Engineering",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Redis",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Terraform",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "jQuery",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
+        "benchmark_share": 0.02702702702702703,
         "priority": "low",
         "stability_tier": "low"
       },
       {
-        "technology": "C",
-        "job_count": 1,
-        "job_share": 0.02857142857142857,
+        "technology": "SDLC",
+        "job_count": 2,
+        "job_share": 0.05405405405405406,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1977,15 +2049,7 @@
       {
         "technology": "MVC",
         "job_count": 1,
-        "job_share": 0.02857142857142857,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "SDLC",
-        "job_count": 1,
-        "job_share": 0.02857142857142857,
+        "job_share": 0.02702702702702703,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -1995,447 +2059,447 @@
       {
         "technology": "Java",
         "job_count": 38,
-        "job_share": 0.4418604651162791,
-        "benchmark_share": 0.4069767441860465,
+        "job_share": 0.41304347826086957,
+        "benchmark_share": 0.3804347826086957,
+        "priority": "high",
+        "stability_tier": "high"
+      },
+      {
+        "technology": "JavaScript",
+        "job_count": 36,
+        "job_share": 0.391304347826087,
+        "benchmark_share": 0.3804347826086957,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "Python",
         "job_count": 34,
-        "job_share": 0.3953488372093023,
-        "benchmark_share": 0.38372093023255816,
-        "priority": "high",
-        "stability_tier": "high"
-      },
-      {
-        "technology": "JavaScript",
-        "job_count": 33,
-        "job_share": 0.38372093023255816,
-        "benchmark_share": 0.37209302325581395,
+        "job_share": 0.3695652173913043,
+        "benchmark_share": 0.358695652173913,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "SQL",
-        "job_count": 31,
-        "job_share": 0.36046511627906974,
-        "benchmark_share": 0.3372093023255814,
+        "job_count": 33,
+        "job_share": 0.358695652173913,
+        "benchmark_share": 0.32608695652173914,
         "priority": "high",
         "stability_tier": "high"
       },
       {
         "technology": "HTML",
-        "job_count": 25,
-        "job_share": 0.29069767441860467,
-        "benchmark_share": 0.2558139534883721,
+        "job_count": 26,
+        "job_share": 0.2826086956521739,
+        "benchmark_share": 0.2391304347826087,
         "priority": "medium",
         "stability_tier": "high"
       },
       {
         "technology": "CSS",
-        "job_count": 22,
-        "job_share": 0.2558139534883721,
-        "benchmark_share": 0.23255813953488372,
+        "job_count": 24,
+        "job_share": 0.2608695652173913,
+        "benchmark_share": 0.2391304347826087,
+        "priority": "medium",
+        "stability_tier": "high"
+      },
+      {
+        "technology": "React",
+        "job_count": 20,
+        "job_share": 0.21739130434782608,
+        "benchmark_share": 0.20652173913043478,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "Git",
         "job_count": 26,
-        "job_share": 0.3023255813953488,
-        "benchmark_share": 0.20930232558139536,
+        "job_share": 0.2826086956521739,
+        "benchmark_share": 0.1956521739130435,
         "priority": "medium",
         "stability_tier": "high"
       },
       {
-        "technology": "React",
+        "technology": "MySQL",
         "job_count": 19,
-        "job_share": 0.22093023255813954,
-        "benchmark_share": 0.20930232558139536,
+        "job_share": 0.20652173913043478,
+        "benchmark_share": 0.1956521739130435,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "REST API",
         "job_count": 20,
-        "job_share": 0.23255813953488372,
-        "benchmark_share": 0.18604651162790697,
+        "job_share": 0.21739130434782608,
+        "benchmark_share": 0.17391304347826086,
         "priority": "medium",
         "stability_tier": "medium"
       },
       {
         "technology": "OOP",
         "job_count": 19,
-        "job_share": 0.22093023255813954,
-        "benchmark_share": 0.18604651162790697,
+        "job_share": 0.20652173913043478,
+        "benchmark_share": 0.17391304347826086,
         "priority": "medium",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "MySQL",
-        "job_count": 16,
-        "job_share": 0.18604651162790697,
-        "benchmark_share": 0.1744186046511628,
-        "priority": "medium",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "MongoDB",
-        "job_count": 11,
-        "job_share": 0.12790697674418605,
-        "benchmark_share": 0.12790697674418605,
-        "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Angular",
-        "job_count": 12,
-        "job_share": 0.13953488372093023,
-        "benchmark_share": 0.11627906976744186,
+        "job_count": 13,
+        "job_share": 0.14130434782608695,
+        "benchmark_share": 0.11956521739130435,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": ".NET",
+        "job_count": 12,
+        "job_share": 0.13043478260869565,
+        "benchmark_share": 0.11956521739130435,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "MongoDB",
         "job_count": 11,
-        "job_share": 0.12790697674418605,
-        "benchmark_share": 0.11627906976744186,
+        "job_share": 0.11956521739130435,
+        "benchmark_share": 0.11956521739130435,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "PHP",
+        "job_count": 11,
+        "job_share": 0.11956521739130435,
+        "benchmark_share": 0.09782608695652174,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Node.js",
         "job_count": 10,
-        "job_share": 0.11627906976744186,
-        "benchmark_share": 0.10465116279069768,
+        "job_share": 0.10869565217391304,
+        "benchmark_share": 0.09782608695652174,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "jQuery",
+        "job_count": 9,
+        "job_share": 0.09782608695652174,
+        "benchmark_share": 0.09782608695652174,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "C",
-        "job_count": 11,
-        "job_share": 0.12790697674418605,
-        "benchmark_share": 0.09302325581395349,
+        "job_count": 12,
+        "job_share": 0.13043478260869565,
+        "benchmark_share": 0.08695652173913043,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "PostgreSQL",
         "job_count": 11,
-        "job_share": 0.12790697674418605,
-        "benchmark_share": 0.09302325581395349,
+        "job_share": 0.11956521739130435,
+        "benchmark_share": 0.08695652173913043,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Django",
         "job_count": 9,
-        "job_share": 0.10465116279069768,
-        "benchmark_share": 0.09302325581395349,
+        "job_share": 0.09782608695652174,
+        "benchmark_share": 0.08695652173913043,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
-        "technology": "jQuery",
-        "job_count": 8,
-        "job_share": 0.09302325581395349,
-        "benchmark_share": 0.09302325581395349,
+        "technology": "Microsoft SQL Server",
+        "job_count": 9,
+        "job_share": 0.09782608695652174,
+        "benchmark_share": 0.08695652173913043,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "GitHub",
         "job_count": 14,
-        "job_share": 0.16279069767441862,
-        "benchmark_share": 0.08139534883720931,
+        "job_share": 0.15217391304347827,
+        "benchmark_share": 0.07608695652173914,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Spring",
         "job_count": 9,
-        "job_share": 0.10465116279069768,
-        "benchmark_share": 0.08139534883720931,
-        "priority": "low",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "Microsoft SQL Server",
-        "job_count": 8,
-        "job_share": 0.09302325581395349,
-        "benchmark_share": 0.08139534883720931,
-        "priority": "low",
-        "stability_tier": "medium"
-      },
-      {
-        "technology": "PHP",
-        "job_count": 8,
-        "job_share": 0.09302325581395349,
-        "benchmark_share": 0.06976744186046512,
+        "job_share": 0.09782608695652174,
+        "benchmark_share": 0.07608695652173914,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "DSA",
         "job_count": 6,
-        "job_share": 0.06976744186046512,
-        "benchmark_share": 0.06976744186046512,
+        "job_share": 0.06521739130434782,
+        "benchmark_share": 0.06521739130434782,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Microservices",
         "job_count": 6,
-        "job_share": 0.06976744186046512,
-        "benchmark_share": 0.06976744186046512,
+        "job_share": 0.06521739130434782,
+        "benchmark_share": 0.06521739130434782,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "TypeScript",
         "job_count": 6,
-        "job_share": 0.06976744186046512,
-        "benchmark_share": 0.06976744186046512,
+        "job_share": 0.06521739130434782,
+        "benchmark_share": 0.06521739130434782,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Azure",
         "job_count": 12,
-        "job_share": 0.13953488372093023,
-        "benchmark_share": 0.05813953488372093,
+        "job_share": 0.13043478260869565,
+        "benchmark_share": 0.05434782608695652,
+        "priority": "low",
+        "stability_tier": "medium"
+      },
+      {
+        "technology": "AWS",
+        "job_count": 11,
+        "job_share": 0.11956521739130435,
+        "benchmark_share": 0.05434782608695652,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "SDLC",
         "job_count": 7,
-        "job_share": 0.08139534883720931,
-        "benchmark_share": 0.05813953488372093,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "AWS",
-        "job_count": 10,
-        "job_share": 0.11627906976744186,
-        "benchmark_share": 0.046511627906976744,
+        "job_share": 0.07608695652173914,
+        "benchmark_share": 0.05434782608695652,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
+        "technology": "ASP.NET",
+        "job_count": 5,
+        "job_share": 0.05434782608695652,
+        "benchmark_share": 0.05434782608695652,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "MVC",
+        "job_count": 5,
+        "job_share": 0.05434782608695652,
+        "benchmark_share": 0.05434782608695652,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
         "technology": "Docker",
         "job_count": 9,
-        "job_share": 0.10465116279069768,
-        "benchmark_share": 0.046511627906976744,
+        "job_share": 0.09782608695652174,
+        "benchmark_share": 0.043478260869565216,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Flask",
         "job_count": 5,
-        "job_share": 0.05813953488372093,
-        "benchmark_share": 0.046511627906976744,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "ASP.NET",
-        "job_count": 4,
-        "job_share": 0.046511627906976744,
-        "benchmark_share": 0.046511627906976744,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "MVC",
-        "job_count": 4,
-        "job_share": 0.046511627906976744,
-        "benchmark_share": 0.046511627906976744,
+        "job_share": 0.05434782608695652,
+        "benchmark_share": 0.043478260869565216,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Google Cloud",
         "job_count": 8,
-        "job_share": 0.09302325581395349,
-        "benchmark_share": 0.03488372093023256,
+        "job_share": 0.08695652173913043,
+        "benchmark_share": 0.03260869565217391,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "Machine Learning",
         "job_count": 7,
-        "job_share": 0.08139534883720931,
-        "benchmark_share": 0.03488372093023256,
+        "job_share": 0.07608695652173914,
+        "benchmark_share": 0.03260869565217391,
         "priority": "low",
         "stability_tier": "medium"
       },
       {
         "technology": "LLM",
         "job_count": 5,
-        "job_share": 0.05813953488372093,
-        "benchmark_share": 0.03488372093023256,
+        "job_share": 0.05434782608695652,
+        "benchmark_share": 0.03260869565217391,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Excel",
         "job_count": 3,
-        "job_share": 0.03488372093023256,
-        "benchmark_share": 0.03488372093023256,
+        "job_share": 0.03260869565217391,
+        "benchmark_share": 0.03260869565217391,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Hibernate",
         "job_count": 4,
-        "job_share": 0.046511627906976744,
-        "benchmark_share": 0.023255813953488372,
+        "job_share": 0.043478260869565216,
+        "benchmark_share": 0.021739130434782608,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Linux",
         "job_count": 4,
-        "job_share": 0.046511627906976744,
-        "benchmark_share": 0.023255813953488372,
+        "job_share": 0.043478260869565216,
+        "benchmark_share": 0.021739130434782608,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "FastAPI",
         "job_count": 3,
-        "job_share": 0.03488372093023256,
-        "benchmark_share": 0.023255813953488372,
+        "job_share": 0.03260869565217391,
+        "benchmark_share": 0.021739130434782608,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Android",
+        "job_count": 2,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.021739130434782608,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Bootstrap",
+        "job_count": 2,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.021739130434782608,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Express.js",
         "job_count": 2,
-        "job_share": 0.023255813953488372,
-        "benchmark_share": 0.023255813953488372,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.021739130434782608,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "GitHub Actions",
         "job_count": 2,
-        "job_share": 0.023255813953488372,
-        "benchmark_share": 0.023255813953488372,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.021739130434782608,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "Web API",
+        "job_count": 2,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.021739130434782608,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "C++",
+        "job_count": 5,
+        "job_share": 0.05434782608695652,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Generative AI",
         "job_count": 4,
-        "job_share": 0.046511627906976744,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.043478260869565216,
+        "benchmark_share": 0.010869565217391304,
+        "priority": "low",
+        "stability_tier": "low"
+      },
+      {
+        "technology": "C#",
+        "job_count": 3,
+        "job_share": 0.03260869565217391,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Prompt Engineering",
         "job_count": 3,
-        "job_share": 0.03488372093023256,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.03260869565217391,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Bash",
         "job_count": 2,
-        "job_share": 0.023255813953488372,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Next.js",
         "job_count": 2,
-        "job_share": 0.023255813953488372,
-        "benchmark_share": 0.011627906976744186,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Android",
-        "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Bootstrap",
-        "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.021739130434782608,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Jenkins",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "MS Access",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Rust",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Vue.js",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "Web API",
-        "job_count": 1,
-        "job_share": 0.011627906976744186,
-        "benchmark_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
+        "benchmark_share": 0.010869565217391304,
         "priority": "low",
         "stability_tier": "low"
       },
       {
         "technology": "Kubernetes",
         "job_count": 5,
-        "job_share": 0.05813953488372093,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "C++",
-        "job_count": 3,
-        "job_share": 0.03488372093023256,
-        "benchmark_share": 0.0,
-        "priority": "low",
-        "stability_tier": "low"
-      },
-      {
-        "technology": "C#",
-        "job_count": 2,
-        "job_share": 0.023255813953488372,
+        "job_share": 0.05434782608695652,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -2443,7 +2507,7 @@
       {
         "technology": "Deep Learning",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -2451,7 +2515,7 @@
       {
         "technology": "JUnit",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -2459,7 +2523,7 @@
       {
         "technology": "Power BI",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -2467,7 +2531,7 @@
       {
         "technology": "Terraform",
         "job_count": 1,
-        "job_share": 0.011627906976744186,
+        "job_share": 0.010869565217391304,
         "benchmark_share": 0.0,
         "priority": "low",
         "stability_tier": "low"
@@ -2630,19 +2694,19 @@
   },
   "role_meta": {
     "Backend": {
-      "n_jobs": 69,
+      "n_jobs": 76,
       "n_technologies": 72
     },
     "Frontend": {
-      "n_jobs": 20,
-      "n_technologies": 36
+      "n_jobs": 27,
+      "n_technologies": 44
     },
     "Full Stack": {
-      "n_jobs": 35,
+      "n_jobs": 37,
       "n_technologies": 52
     },
     "General Software Development": {
-      "n_jobs": 86,
+      "n_jobs": 92,
       "n_technologies": 60
     },
     "Mobile": {
