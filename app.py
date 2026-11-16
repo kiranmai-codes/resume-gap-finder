@@ -1,8 +1,119 @@
-# ... (keep all the imports, config, CSS, and load functions the same) ...
+#!/usr/bin/env python3
+"""
+Streamlit web app — Resume Gap Finder.
+"""
+import io
+import json
+import re
+from pathlib import Path
+
+import streamlit as st
+
+# ============================================================
+# Config & Custom CSS
+# ============================================================
+st.set_page_config(
+    page_title="Resume Gap Finder — India Entry-Level SDE",
+    page_icon="🎯",
+    layout="wide",
+)
+
+# Inject custom CSS for a cleaner, SaaS-like look
+st.markdown("""
+<style>
+    /* Hide default Streamlit footer and menu */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* Improve typography */
+    html, body, [class*="css"] {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    /* Style the title */
+    h1 {
+        font-weight: 800;
+        color: #111827;
+        letter-spacing: -0.02em;
+    }
+    
+    /* Style the metrics to look like cards */
+    div[data-testid="stMetric"] {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    /* Style the form container */
+    div[data-testid="stForm"] {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Style the submit button */
+    div[data-testid="stFormSubmitButton"] button {
+        background-color: #4F46E5;
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        border: none;
+        padding: 12px 24px;
+        transition: all 0.2s;
+    }
+    div[data-testid="stFormSubmitButton"] button:hover {
+        background-color: #4338CA;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+</style>
+""", unsafe_allow_html=True)
+
+ARTIFACT_PATH = Path(__file__).parent / "outputs" / "pipeline" / "16_resume_gap_artifact.json"
+
+# ============================================================
+# Load benchmark (cached)
+# ============================================================
+@st.cache_data
+def load_benchmark():
+    with open(ARTIFACT_PATH) as f:
+        return json.load(f)
+
+@st.cache_data
+def load_taxonomy():
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from core.indeed_taxonomy import TECHNOLOGY_ALIASES, TECH_CATEGORIES
+        return TECHNOLOGY_ALIASES, TECH_CATEGORIES
+    except Exception:
+        return {}, {}
 
 # ============================================================
 # Logic
 # ============================================================
+def extract_text_from_pdf(pdf_bytes):
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(io.BytesIO(pdf_bytes))
+        return "\n".join(page.extract_text() or "" for page in reader.pages)
+    except Exception as e:
+        st.error(f"Could not read PDF: {e}")
+        return ""
+
+def extract_skills(resume_text, aliases):
+    text = (resume_text or "").lower()
+    found = {}
+    for tech, patterns in aliases.items():
+        for pat in patterns:
+            if re.search(pat, text, re.I):
+                found[tech] = True
+                break
+    return found
+
 def compute_gap(resume_skills, benchmark_techs):
     have, missing = [], []
     stability_weight = {"high": 1.0, "medium": 0.7, "low": 0.4}
@@ -27,7 +138,31 @@ def compute_gap(resume_skills, benchmark_techs):
     have.sort(key=lambda x: x["benchmark_share"], reverse=True)
     return have, missing
 
-# ... (keep PROJECT_IDEAS the same) ...
+PROJECT_IDEAS = {
+    "JavaScript": "Build a to-do list app with vanilla JS (DOM, fetch API, localStorage). Push to GitHub with a README.",
+    "Java": "Build a command-line inventory manager using Java + JDBC + MySQL. Add JUnit tests.",
+    "HTML": "Build a responsive portfolio site with HTML5 semantic tags + CSS grid. Deploy to Netlify.",
+    "Python": "Build a FastAPI REST API that fetches from a public API, caches with Redis, returns JSON. Deploy with Docker.",
+    "CSS": "Build a 3-page responsive site using only CSS (no frameworks). Add mobile menu + dark mode.",
+    "REST API": "Build a CRUD REST API with GET/POST/PUT/DELETE, input validation, and error responses.",
+    "SQL": "Build a movie-rating database (3+ tables, foreign keys). Queries for top-rated, per-genre rankings.",
+    "React": "Build a weather dashboard with React hooks + fetch. Include city search, loading states, error handling.",
+    "Git": "Fork an open-source repo, make 3 meaningful commits, submit a PR with clear commit messages.",
+    "OOP": "Build a small library system using classes, inheritance, interfaces. Include UML diagram in README.",
+    "Node.js": "Build a real-time chat app with Node.js + Socket.io + Express. Include rooms and message history.",
+    "MySQL": "Build a booking system (users, bookings, slots) with normalized schema. Include migrations and seed data.",
+    "MongoDB": "Build a task manager with MongoDB + Express + React. Use aggregation pipelines for filtering.",
+    "PostgreSQL": "Extend your SQL project to PostgreSQL. Add full-text search, a view, and a stored procedure.",
+    "Angular": "Build an admin dashboard with Angular + RxJS + Material. Include routing, guards, form validation.",
+    "Spring": "Build a library management API with Spring Boot + JPA + MySQL. Include Swagger docs and tests.",
+    "Spring Boot": "Build a payment gateway API with Spring Boot. Add JWT auth, Hibernate ORM, and integration tests.",
+    "Docker": "Containerize your FastAPI/Node project. Write Dockerfile + docker-compose.yml. Deploy to a cloud VM.",
+    "AWS": "Deploy one of your projects to AWS EC2 + RDS. Include a load balancer and a managed DB.",
+    "TypeScript": "Migrate one of your JavaScript projects to TypeScript. Add strict mode + interfaces for all API responses.",
+    "Django": "Build a blog with Django + PostgreSQL. Include user auth, admin panel, and deployment to Render.",
+    "Kotlin": "Build a small Android app with Kotlin + Jetpack Compose. Publish to Play Store internal testing.",
+    "Android": "Build an Android app that fetches data from your FastAPI backend. Include auth and offline cache.",
+}
 
 # ============================================================
 # UI Layout
@@ -104,7 +239,6 @@ def main():
 
         have, missing = compute_gap(resume_skills, benchmark_techs)
 
-        # --- NEW UI METRICS ---
         st.divider()
         st.header("Your gap report")
         
@@ -129,7 +263,6 @@ def main():
                 st.markdown("### Your Top 5 Priorities")
                 st.caption("Focus on these first. They are the highest-leverage skills for your target role.")
                 
-                # Only show top 5 by default
                 for i, m in enumerate(missing[:5], 1):
                     pct = m["benchmark_share"] * 100
                     with st.expander(f"{i}. {m['technology']} — required by {pct:.0f}% of jobs", expanded=(i == 1)):
@@ -139,7 +272,6 @@ def main():
                         else:
                             st.info(f"No project template yet — search \"{m['technology']} beginner project\" on YouTube.")
 
-                # Hide the rest behind an expander
                 if len(missing) > 5:
                     with st.expander(f"➕ View other {len(missing) - 5} lower-priority skills in the benchmark"):
                         st.caption("These appear in fewer jobs. Learn them later if you have time.")
@@ -156,7 +288,6 @@ def main():
                     pct = h["benchmark_share"] * 100
                     st.markdown(f"- **{h['technology']}** — in {pct:.0f}% of jobs ({h['priority']} priority)")
 
-        # Footer
         st.divider()
         st.subheader("How to use this")
         st.markdown("""
@@ -166,7 +297,6 @@ def main():
             4. Come back and re-run this after you've built them
         """)
 
-        # Download logic
         report_text = f"RESUME GAP REPORT\nScope: {scope_label} ({denominator} jobs)\n\nTOP GAPS TO LEARN:\n"
         for i, m in enumerate(missing[:5], 1):
             report_text += f"{i}. {m['technology']} ({m['benchmark_share']*100:.0f}%)\n"
