@@ -1,10 +1,59 @@
+# Secrets — NEVER commit
 .env
+.env.*
+!.env.example
+
+# Database with raw scraped data
 jobs.db
-*.log
-outputs/
-jobs.db
-.env
-*.pyc
-__pycache__/
+*.db
+
+# Browser profiles (contain cookies = login sessions)
+.naukri_profile_v9/
 .naukri_scraper_profile/
 .naukri_diagnostic_profile/
+indeed_gap_finder_chrome_profile/
+foundit_gap_finder_chrome_profile/
+*naukri_profile*/
+*chrome_profile*/
+*_profile/
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE
+.vscode/
+.idea/
+
+# Scraper runtime
+.scraper.lock
+*.lock
+logs/
+
+# Raw scrape outputs (contain scraped job text — clean but bulk)
+outputs/foundit/
+outputs/indeed/
+outputs/naukri_v9/
+outputs/naukri_v10/
+outputs/jobspy/
+outputs/naukri_diagnostic/
+
+# Dev/diagnostic scripts (portfolio doesn't need these)
+check_dedup.py
+check_portal_mix.py
+check_rejections.py
+check_tier.py
+diagnostics_nan.py
+sample_probable.py
+telegram_test.py
+naukri_diagnose.py

@@ -1,0 +1,6 @@
+﻿role_family,n_jobs,top_technologies
+Backend,69,"Python (42%), SQL (38%), REST API (38%), Java (36%), JavaScript (29%)"
+Frontend,20,"HTML (80%), CSS (50%), JavaScript (50%), React (25%), REST API (20%)"
+Full Stack,35,"JavaScript (49%), React (46%), CSS (46%), HTML (46%), Java (40%)"
+General Software Development,86,"Java (41%), Python (38%), JavaScript (37%), SQL (34%), HTML (26%)"
+Mobile,19,"Android (89%), Java (47%), C (21%), REST API (16%), Git (11%)"

@@ -1,0 +1,159 @@
+{
+  "total_jobs_in_db": 359,
+  "eligible_jobs": 49,
+  "manual_review_jobs": 310,
+  "eligibility_rate": 0.1365,
+  "unique_eligible_companies": 44,
+  "portal_distribution": [
+    {
+      "source_portal": "Indeed",
+      "eligible_jobs": 25
+    },
+    {
+      "source_portal": "Naukri",
+      "eligible_jobs": 12
+    },
+    {
+      "source_portal": "JobSpy",
+      "eligible_jobs": 11
+    },
+    {
+      "source_portal": "Foundit",
+      "eligible_jobs": 1
+    }
+  ],
+  "role_family_distribution": [
+    {
+      "role_family": "General Software Development",
+      "job_count": 22,
+      "job_share": 0.4489795918367347
+    },
+    {
+      "role_family": "Backend",
+      "job_count": 12,
+      "job_share": 0.24489795918367346
+    },
+    {
+      "role_family": "Full Stack",
+      "job_count": 4,
+      "job_share": 0.08163265306122448
+    },
+    {
+      "role_family": "Unclear",
+      "job_count": 4,
+      "job_share": 0.08163265306122448
+    },
+    {
+      "role_family": "Frontend",
+      "job_count": 3,
+      "job_share": 0.061224489795918366
+    },
+    {
+      "role_family": "Mobile",
+      "job_count": 2,
+      "job_share": 0.04081632653061224
+    },
+    {
+      "role_family": "DevOps / Infrastructure",
+      "job_count": 1,
+      "job_share": 0.02040816326530612
+    },
+    {
+      "role_family": "QA / Testing",
+      "job_count": 1,
+      "job_share": 0.02040816326530612
+    }
+  ],
+  "top_10_technologies": [
+    {
+      "technology": "JavaScript",
+      "job_share": 0.4897959183673469,
+      "benchmark_share": 0.40816326530612246,
+      "priority": "high"
+    },
+    {
+      "technology": "Java",
+      "job_share": 0.3877551020408163,
+      "benchmark_share": 0.3673469387755102,
+      "priority": "high"
+    },
+    {
+      "technology": "HTML",
+      "job_share": 0.40816326530612246,
+      "benchmark_share": 0.32653061224489793,
+      "priority": "high"
+    },
+    {
+      "technology": "CSS",
+      "job_share": 0.3877551020408163,
+      "benchmark_share": 0.30612244897959184,
+      "priority": "high"
+    },
+    {
+      "technology": "SQL",
+      "job_share": 0.3673469387755102,
+      "benchmark_share": 0.2857142857142857,
+      "priority": "medium"
+    },
+    {
+      "technology": "OOP",
+      "job_share": 0.3469387755102041,
+      "benchmark_share": 0.2857142857142857,
+      "priority": "medium"
+    },
+    {
+      "technology": "Git",
+      "job_share": 0.32653061224489793,
+      "benchmark_share": 0.2857142857142857,
+      "priority": "medium"
+    },
+    {
+      "technology": "REST API",
+      "job_share": 0.30612244897959184,
+      "benchmark_share": 0.2653061224489796,
+      "priority": "medium"
+    },
+    {
+      "technology": "Python",
+      "job_share": 0.30612244897959184,
+      "benchmark_share": 0.24489795918367346,
+      "priority": "medium"
+    },
+    {
+      "technology": "React",
+      "job_share": 0.24489795918367346,
+      "benchmark_share": 0.16326530612244897,
+      "priority": "medium"
+    }
+  ],
+  "manual_review_breakdown": [
+    {
+      "reason": "entry_level_ambiguous",
+      "count": 116
+    },
+    {
+      "reason": "not_entry_level: Experience requirement starts above zero",
+      "count": 87
+    },
+    {
+      "reason": "role_adjacent",
+      "count": 38
+    },
+    {
+      "reason": "career_level: ambiguous",
+      "count": 36
+    },
+    {
+      "reason": "not_entry_level: Senior/lead/principal/management title signal",
+      "count": 27
+    },
+    {
+      "reason": "experience_conflict",
+      "count": 3
+    },
+    {
+      "reason": "role_irrelevant",
+      "count": 3
+    }
+  ]
+}
