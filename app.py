@@ -247,13 +247,16 @@ def main():
         st.divider()
         st.header("Your gap report")
         
-        total_relevant = len(have) + len(missing)
-        match_rate = (len(have) / total_relevant) * 100 if total_relevant > 0 else 0
+                # Calculate match rate against the Top 10 core skills for this role
+        top_10_core = benchmark_techs[:10] 
+        core_matches = sum(1 for tech in top_10_core if tech["technology"] in resume_skills)
+        match_rate = (core_matches / len(top_10_core)) * 100 if top_10_core else 0
+        
         top_gap = missing[0]["technology"] if missing else "None!"
 
         c1, c2, c3 = st.columns(3)
         c1.metric("Skills matched", len(have))
-        c2.metric("Match Rate", f"{match_rate:.0f}%", help="Percentage of the benchmark's key skills found in your resume.")
+        c2.metric("Core Stack Match", f"{match_rate:.0f}%", help="Your match rate against the Top 10 most in-demand skills for this role.")
         c3.metric("Top gap to fill", top_gap)
 
         st.markdown(f"Comparing against **{denominator} jobs** in the {scope_label} benchmark.")
