@@ -10,6 +10,22 @@ from pathlib import Path
 
 
 import streamlit as st
+import streamlit.components.v1 as components
+
+# Google Analytics Tracking Code
+GA_ID = "G-33JG5NZW8J" # Replace with your actual ID
+
+ga_script = f"""
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_ID}');
+    </script>
+"""
+components.html(ga_script, height=0)
 
 # ============================================================
 # Config & Custom CSS
