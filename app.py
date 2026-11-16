@@ -2,10 +2,12 @@
 """
 Streamlit web app — Resume Gap Finder.
 """
+import urllib.request
 import io
 import json
 import re
 from pathlib import Path
+
 
 import streamlit as st
 
@@ -315,6 +317,43 @@ def main():
             file_name="resume_gap_report.txt",
             mime="text/plain",
         )
+        # ============================================================
+    # FEEDBACK SECTION
+    # ============================================================
+    st.divider()
+    st.subheader("Was this helpful?")
+    st.markdown("I built this as a side project. Let me know if this report helped you, or if you have ideas to make it better!")
+    
+    col1, col2 = st.columns([1, 3])
+    with col1:
+        # Native Streamlit star rating (1 to 5)
+        stars = st.feedback("stars")
+    with col2:
+        comment = st.text_input("Any other feedback? (Optional)", placeholder="Your feedback here...")
+        
+    if st.button("Submit Feedback"):
+        if stars is None and not comment:
+            st.warning("Please leave a rating or a comment first!")
+        else:
+            # DISCORD WEBHOOK URL (Paste yours here)
+            WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
+            
+            rating_str = f"{stars} Stars" if stars else "No rating"
+            
+            payload = {
+                "content": f"**New Feedback for Resume Gap Finder!**\n**Role:** {role_choice if 'role_choice' in locals() else 'None'}\n**Rating:** {rating_str}\n**Comment:** {comment}"
+            }
+            
+            try:
+                req = urllib.request.Request(WEBHOOK_URL, data=json.dumps(payload).encode(), headers={"Content-Type": "application/json"})
+                urllib.request.urlopen(req)
+                st.success("✅ Thank you! Your feedback has been received.")
+            except Exception as e:
+                st.error(f"Failed to send feedback: {e}")
+
+    # Privacy Footer
+    st.write("")
+    # ... (leave the st.caption privacy stuff exactly as it is) ...
 
     st.write("")
     st.caption("🔒 **Privacy:** Your resume is parsed in memory only. Nothing is stored, logged, or sent to any third party.")
