@@ -136,6 +136,11 @@ def compute_gap(resume_skills, benchmark_techs):
         
     missing.sort(key=lambda x: x["_score"], reverse=True)
     have.sort(key=lambda x: x["benchmark_share"], reverse=True)
+    
+    # NEW: Filter out anything that requires less than 2% of jobs. 
+    # It's not a "gap", it's just noise.
+    missing = [m for m in missing if m["benchmark_share"] >= 0.02]
+    
     return have, missing
 
 PROJECT_IDEAS = {
