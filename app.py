@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 """
 Streamlit web app — Resume Gap Finder.
-
-Wraps the pipeline's 16_resume_gap_artifact.json in a fresher-friendly UI.
-Public, mobile-friendly, no signup required.
-
-Deploy to: https://streamlit.io/cloud
 """
 import io
 import json
@@ -15,7 +10,7 @@ from pathlib import Path
 import streamlit as st
 
 # ============================================================
-# Config
+# Config & Custom CSS
 # ============================================================
 st.set_page_config(
     page_title="Resume Gap Finder — India Entry-Level SDE",
@@ -23,23 +18,72 @@ st.set_page_config(
     layout="wide",
 )
 
+# Inject custom CSS for a cleaner, SaaS-like look
+st.markdown("""
+<style>
+    /* Hide default Streamlit footer and menu */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* Improve typography */
+    html, body, [class*="css"] {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    /* Style the title */
+    h1 {
+        font-weight: 800;
+        color: #111827;
+        letter-spacing: -0.02em;
+    }
+    
+    /* Style the metrics to look like cards */
+    div[data-testid="stMetric"] {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    /* Style the form container */
+    div[data-testid="stForm"] {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Style the submit button */
+    div[data-testid="stFormSubmitButton"] button {
+        background-color: #4F46E5;
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        border: none;
+        padding: 12px 24px;
+        transition: all 0.2s;
+    }
+    div[data-testid="stFormSubmitButton"] button:hover {
+        background-color: #4338CA;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 ARTIFACT_PATH = Path(__file__).parent / "outputs" / "pipeline" / "16_resume_gap_artifact.json"
 
-
 # ============================================================
-# Load benchmark (cached — runs once per server)
+# Load benchmark (cached)
 # ============================================================
 @st.cache_data
 def load_benchmark():
     with open(ARTIFACT_PATH) as f:
         return json.load(f)
 
-
 @st.cache_data
 def load_taxonomy():
-    """Inline minimal tech aliases so we don't import the heavy pipeline code."""
-    # Import from core — but wrap in try/except so the deployed app doesn't
-    # crash if core/ isn't uploaded. Fall back to empty.
     try:
         import sys
         sys.path.insert(0, str(Path(__file__).parent))
@@ -48,12 +92,10 @@ def load_taxonomy():
     except Exception:
         return {}, {}
 
-
 # ============================================================
-# Resume parsing
+# Logic (Unchanged)
 # ============================================================
 def extract_text_from_pdf(pdf_bytes):
-    """Extract text from uploaded PDF. Returns '' on failure."""
     try:
         from pypdf import PdfReader
         reader = PdfReader(io.BytesIO(pdf_bytes))
@@ -62,9 +104,7 @@ def extract_text_from_pdf(pdf_bytes):
         st.error(f"Could not read PDF: {e}")
         return ""
 
-
 def extract_skills(resume_text, aliases):
-    """Find technologies mentioned in resume."""
     text = (resume_text or "").lower()
     found = {}
     for tech, patterns in aliases.items():
@@ -74,12 +114,9 @@ def extract_skills(resume_text, aliases):
                 break
     return found
 
-
 def compute_gap(resume_skills, benchmark_techs):
-    """Split benchmark techs into 'have' and 'missing'."""
     have, missing = [], []
     stability_weight = {"high": 1.0, "medium": 0.7, "low": 0.4}
-
     for tech in benchmark_techs:
         name = tech["technology"]
         entry = {
@@ -92,20 +129,12 @@ def compute_gap(resume_skills, benchmark_techs):
             have.append(entry)
         else:
             missing.append(entry)
-
     for m in missing:
-        m["_score"] = (
-            m["benchmark_share"]
-            * stability_weight.get(m["stability_tier"], 0.4)
-        )
+        m["_score"] = m["benchmark_share"] * stability_weight.get(m["stability_tier"], 0.4)
     missing.sort(key=lambda x: x["_score"], reverse=True)
     have.sort(key=lambda x: x["benchmark_share"], reverse=True)
     return have, missing
 
-
-# ============================================================
-# Project ideas (reuse from CLI)
-# ============================================================
 PROJECT_IDEAS = {
     "JavaScript": "Build a to-do list app with vanilla JS (DOM, fetch API, localStorage). Push to GitHub with a README.",
     "Java": "Build a command-line inventory manager using Java + JDBC + MySQL. Add JUnit tests.",
@@ -132,76 +161,74 @@ PROJECT_IDEAS = {
     "Android": "Build an Android app that fetches data from your FastAPI backend. Include auth and offline cache.",
 }
 
-
 # ============================================================
-# Page layout
+# UI Layout
 # ============================================================
 def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
 
-    # Header
+    # Header Section
     st.title("🎯 Resume Gap Finder")
-    st.caption(
+    st.markdown(
         f"Compare your resume to **{artifact['benchmark_size']} verified "
         f"entry-level software engineering jobs** in India — and find out "
         f"exactly what to learn next."
     )
 
-    # Meta strip
+    # Metrics Section
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Jobs in benchmark", artifact["benchmark_size"])
     col2.metric("Companies", artifact["unique_companies"])
     col3.metric("Confirmed entry-level", artifact["confirmed_tier"])
     col4.metric("Role families", len(artifact.get("role_meta", {})))
 
-    st.divider()
+    st.write("") # Spacer
 
-    # Input section
-    with st.form("resume_form"):
-        st.subheader("1. Upload your resume")
-        uploaded = st.file_uploader(
-            "PDF or plain text",
-            type=["pdf", "txt"],
-            help="Upload your resume. Nothing is stored — it's parsed in memory only.",
-        )
+    # Center the form using columns (gives it a nice card look)
+    form_col1, form_col2, form_col3 = st.columns([1, 2, 1])
+    
+    with form_col2:
+        with st.form("resume_form"):
+            st.subheader("1. Upload your resume")
+            uploaded = st.file_uploader(
+                "PDF or plain text",
+                type=["pdf", "txt"],
+                help="Upload your resume. Nothing is stored — it's parsed in memory only.",
+                label_visibility="collapsed"
+            )
 
-        st.subheader("2. Pick your target role")
-        role_options = ["All software roles (overview)"] + sorted(
-            artifact.get("role_meta", {}).keys()
-        )
-        role_choice = st.selectbox(
-            "Which kind of role are you targeting?",
-            role_options,
-            index=0,
-            help="Backend, Frontend, Full Stack, Mobile — pick what you want "
-                 "to apply to. Different targets → different skill priorities.",
-        )
+            st.subheader("2. Pick your target role")
+            role_options = ["All software roles (overview)"] + sorted(
+                artifact.get("role_meta", {}).keys()
+            )
+            role_choice = st.selectbox(
+                "Which kind of role are you targeting?",
+                role_options,
+                index=0,
+                help="Backend, Frontend, Full Stack, Mobile — pick what you want to apply to.",
+                label_visibility="collapsed"
+            )
 
-        submitted = st.form_submit_button("Analyze my resume", use_container_width=True)
+            submitted = st.form_submit_button("Analyze my resume", use_container_width=True)
 
-    # Run analysis
+    # Run Analysis
     if submitted:
         if not uploaded:
             st.warning("Please upload a resume first.")
             return
 
-        # Extract text
         if uploaded.type == "application/pdf":
             resume_text = extract_text_from_pdf(uploaded.read())
         else:
             resume_text = uploaded.read().decode("utf-8", errors="ignore")
 
         if not resume_text.strip() or len(resume_text) < 100:
-            st.error(
-                "Couldn't extract text from your resume. "
-                "If it's a scanned PDF (image-only), try uploading a text version instead."
-            )
+            st.error("Couldn't extract text from your resume. Try a text version.")
             return
 
         resume_skills = extract_skills(resume_text, aliases)
 
-        # Choose benchmark table
         if role_choice.startswith("All software"):
             benchmark_techs = artifact["technologies"]
             denominator = artifact["benchmark_size"]
@@ -213,45 +240,34 @@ def main():
 
         have, missing = compute_gap(resume_skills, benchmark_techs)
 
-        # Show results
+        # Results Section
         st.divider()
         st.header("Your gap report")
-        st.caption(
-            f"Comparing against **{denominator} jobs** in the {scope_label} benchmark."
-        )
-
-        # Quick stats
+        
+        # Result Metrics
         c1, c2, c3 = st.columns(3)
         c1.metric("Skills you have", len(have))
         c2.metric("Skills missing", len(missing))
-        top_gap = missing[0]["technology"] if missing else "None — you're covered!"
+        top_gap = missing[0]["technology"] if missing else "None!"
         c3.metric("Top priority to learn", top_gap)
 
-        # Tabs
+        st.markdown(f"Comparing against **{denominator} jobs** in the {scope_label} benchmark.")
+        st.write("")
+
         tab1, tab2 = st.tabs(["⚠️ What to learn", "✅ What you have"])
 
         with tab1:
             if not missing:
                 st.success("You have every technology the benchmark cares about. 🎉")
             else:
-                st.subheader("Top skills to learn next")
                 for i, m in enumerate(missing[:8], 1):
                     pct = m["benchmark_share"] * 100
-                    with st.expander(
-                        f"{i}. {m['technology']} — required by {pct:.0f}% of jobs",
-                        expanded=(i <= 2),
-                    ):
-                        st.markdown(
-                            f"**Priority:** `{m['priority']}` · "
-                            f"**Stability:** `{m['stability_tier']}`"
-                        )
+                    with st.expander(f"{i}. {m['technology']} — required by {pct:.0f}% of jobs", expanded=(i <= 2)):
+                        st.markdown(f"**Priority:** `{m['priority']}` · **Stability:** `{m['stability_tier']}`")
                         if m["technology"] in PROJECT_IDEAS:
                             st.info(f"💡 **Project idea:** {PROJECT_IDEAS[m['technology']]}")
                         else:
-                            st.info(
-                                "No project template yet — search "
-                                f"\"{m['technology']} beginner project\" on YouTube."
-                            )
+                            st.info(f"No project template yet — search \"{m['technology']} beginner project\" on YouTube.")
 
         with tab2:
             if not have:
@@ -259,30 +275,22 @@ def main():
             else:
                 for h in have[:15]:
                     pct = h["benchmark_share"] * 100
-                    st.markdown(
-                        f"- **{h['technology']}** — in {pct:.0f}% of jobs "
-                        f"({h['priority']} priority)"
-                    )
+                    st.markdown(f"- **{h['technology']}** — in {pct:.0f}% of jobs ({h['priority']} priority)")
 
-        # How to use
+        # Footer
         st.divider()
         st.subheader("How to use this")
-        st.markdown(
-            """
+        st.markdown("""
             1. Pick **2 skills** from your top priorities
             2. Build the suggested project for each — one project per skill
             3. Add both projects to your resume with GitHub links
             4. Come back and re-run this after you've built them
+        """)
 
-            **The percentages are real.** They come from 232 hand-verified jobs,
-            bootstrap-validated so you're not chasing noise. If a skill says
-            "36% of jobs" with `high` stability, that's the actual market, not
-            one company's quirk.
-            """
-        )
-
-        # Download button
-        report_text = _build_text_report(have, missing, scope_label, denominator)
+        report_text = f"RESUME GAP REPORT\nScope: {scope_label} ({denominator} jobs)\n\nMISSING:\n"
+        for i, m in enumerate(missing[:8], 1):
+            report_text += f"{i}. {m['technology']} ({m['benchmark_share']*100:.0f}%)\n"
+            
         st.download_button(
             "📥 Download report as text",
             data=report_text,
@@ -290,40 +298,10 @@ def main():
             mime="text/plain",
         )
 
-    # Privacy note at bottom
-    st.divider()
-    st.caption(
-        "🔒 **Privacy:** Your resume is parsed in memory only. Nothing is stored, "
-        "logged, or sent to any third party. Refresh the page to clear everything."
-    )
-    st.caption(
-        f"Benchmark: {artifact['benchmark_size']} jobs · "
-        f"{artifact['confirmed_tier']} confirmed · "
-        f"{artifact['probable_tier']} probable · "
-        f"4 job portals (Naukri, Indeed, Foundit, JobSpy)."
-    )
-
-
-def _build_text_report(have, missing, scope_label, denominator):
-    lines = [
-        "=" * 60,
-        "RESUME GAP REPORT",
-        f"Scope: {scope_label} ({denominator} jobs)",
-        "=" * 60,
-        "",
-        f"SKILLS YOU HAVE ({len(have)}):",
-    ]
-    for h in have[:15]:
-        lines.append(f"  • {h['technology']:15s} {h['benchmark_share']*100:.0f}%")
-    lines.append("")
-    lines.append(f"SKILLS TO LEARN ({len(missing)}):")
-    for i, m in enumerate(missing[:8], 1):
-        lines.append(
-            f"  {i}. {m['technology']:15s} "
-            f"{m['benchmark_share']*100:.0f}%  [{m['priority']}]"
-        )
-    return "\n".join(lines)
-
+    # Privacy Footer
+    st.write("")
+    st.caption("🔒 **Privacy:** Your resume is parsed in memory only. Nothing is stored, logged, or sent to any third party.")
+    st.caption(f"Benchmark: {artifact['benchmark_size']} jobs · 4 job portals (Naukri, Indeed, Foundit, JobSpy).")
 
 if __name__ == "__main__":
     main()

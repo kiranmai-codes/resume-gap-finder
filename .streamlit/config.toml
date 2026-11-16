@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#4F46E5"      # Indigo 600 - a modern tech blue
+backgroundColor = "#F9FAFB"   # Very light gray, easier on the eyes than pure white
+secondaryBackgroundColor = "#FFFFFF" # Pure white for cards
+textColor = "#111827"         # Dark gray for text
+font = "sans serif"
