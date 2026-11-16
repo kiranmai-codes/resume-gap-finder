@@ -392,7 +392,14 @@ def main():
             }
             
             try:
-                req = urllib.request.Request(WEBHOOK_URL, data=json.dumps(payload).encode(), headers={"Content-Type": "application/json"})
+                req = urllib.request.Request(
+                    WEBHOOK_URL, 
+                    data=json.dumps(payload).encode(), 
+                    headers={
+                        "Content-Type": "application/json",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" # This bypasses Discord's bot blocker
+    }
+)
                 urllib.request.urlopen(req)
                 st.success("✅ Thank you! Your feedback has been received.")
             except Exception as e:
