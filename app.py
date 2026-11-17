@@ -217,6 +217,13 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
 
+    def main():
+    artifact = load_benchmark()
+    aliases, categories = load_taxonomy()
+    
+    # Add this line right here:
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
+
     st.title("🎯 Resume Gap Finder")
     st.markdown(
         f"Compare your resume to **{artifact['benchmark_size']} verified "
@@ -265,6 +272,17 @@ def main():
 
         if uploaded.type == "application/pdf":
             resume_text = extract_text_from_pdf(uploaded.read())
+                    # Ping Discord when someone actually uses the tool
+        try:
+            track_payload = {"content": f"🚀 **Someone just analyzed a resume!** Target Role: {role_choice}"}
+            req = urllib.request.Request(
+                WEBHOOK_URL, 
+                data=json.dumps(track_payload).encode(), 
+                headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+            )
+            urllib.request.urlopen(req)
+        except Exception:
+            pass # Don't crash the app if tracking fails
         else:
             resume_text = uploaded.read().decode("utf-8", errors="ignore")
 
