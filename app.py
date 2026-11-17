@@ -13,7 +13,10 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # Google Analytics Tracking Code
-GA_ID = "G-33JG5NZW8J" # Replace with your actual ID
+GA_ID = "G-33JG5NZW8J" # Replace with your actual Measurement ID
+
+# Google Analytics Tracking Code
+GA_ID = "G-XXXXXXXXXX" # Replace with your actual Measurement ID
 
 ga_script = f"""
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -22,11 +25,10 @@ ga_script = f"""
       window.dataLayer = window.dataLayer || [];
       function gtag(){{dataLayer.push(arguments);}}
       gtag('js', new Date());
-      gtag('config', '{GA_ID}');
+      gtag('config', '{GA_ID}', {{ 'send_page_view': true }});
     </script>
 """
-components.html(ga_script, height=0)
-
+components.html(ga_script, height=0, width=0)
 # ============================================================
 # Config & Custom CSS
 # ============================================================
