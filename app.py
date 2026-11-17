@@ -8,18 +8,15 @@ import json
 import re
 from pathlib import Path
 
-
 import streamlit as st
 import streamlit.components.v1 as components
 
-# Google Analytics Tracking Code
-GA_ID = "G-33JG5NZW8J" # Replace with your actual Measurement ID
-
-# Google Analytics Tracking Code
-GA_ID = "G-XXXXXXXXXX" # Replace with your actual Measurement ID
+# ============================================================
+# Google Analytics
+# ============================================================
+GA_ID = "G-33JG5NZW8J" 
 
 ga_script = f"""
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,6 +26,7 @@ ga_script = f"""
     </script>
 """
 components.html(ga_script, height=0, width=0)
+
 # ============================================================
 # Config & Custom CSS
 # ============================================================
@@ -38,56 +36,26 @@ st.set_page_config(
     layout="wide",
 )
 
-# Inject custom CSS for a cleaner, SaaS-like look
 st.markdown("""
 <style>
-    /* Hide default Streamlit footer and menu */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    
-    /* Improve typography */
-    html, body, [class*="css"] {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    
-    /* Style the title */
-    h1 {
-        font-weight: 800;
-        color: #111827;
-        letter-spacing: -0.02em;
-    }
-    
-    /* Style the metrics to look like cards */
+    html, body, [class*="css"] { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    h1 { font-weight: 800; color: #111827; letter-spacing: -0.02em; }
     div[data-testid="stMetric"] {
-        background-color: white;
-        border: 1px solid #E5E7EB;
-        border-radius: 12px;
-        padding: 16px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        background-color: white; border: 1px solid #E5E7EB; border-radius: 12px;
+        padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    
-    /* Style the form container */
     div[data-testid="stForm"] {
-        background-color: white;
-        border: 1px solid #E5E7EB;
-        border-radius: 16px;
-        padding: 32px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        background-color: white; border: 1px solid #E5E7EB; border-radius: 16px;
+        padding: 32px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
-    
-    /* Style the submit button */
     div[data-testid="stFormSubmitButton"] button {
-        background-color: #4F46E5;
-        color: white;
-        border-radius: 8px;
-        font-weight: 600;
-        border: none;
-        padding: 12px 24px;
-        transition: all 0.2s;
+        background-color: #4F46E5; color: white; border-radius: 8px;
+        font-weight: 600; border: none; padding: 12px 24px; transition: all 0.2s;
     }
     div[data-testid="stFormSubmitButton"] button:hover {
-        background-color: #4338CA;
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        background-color: #4338CA; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -95,7 +63,7 @@ st.markdown("""
 ARTIFACT_PATH = Path(__file__).parent / "outputs" / "pipeline" / "16_resume_gap_artifact.json"
 
 # ============================================================
-# Load benchmark (cached)
+# Load benchmark
 # ============================================================
 @st.cache_data
 def load_benchmark():
@@ -121,7 +89,6 @@ def extract_text_from_pdf(pdf_bytes):
         reader = PdfReader(io.BytesIO(pdf_bytes))
         return "\n".join(page.extract_text() or "" for page in reader.pages)
     except Exception as e:
-        st.error(f"Could not read PDF: {e}")
         return ""
 
 def extract_skills(resume_text, aliases):
@@ -157,10 +124,7 @@ def compute_gap(resume_skills, benchmark_techs):
     missing.sort(key=lambda x: x["_score"], reverse=True)
     have.sort(key=lambda x: x["benchmark_share"], reverse=True)
     
-    # NEW: Filter out anything that requires less than 2% of jobs. 
-    # It's not a "gap", it's just noise.
     missing = [m for m in missing if m["benchmark_share"] >= 0.02]
-    
     return have, missing
 
 PROJECT_IDEAS = {
@@ -189,25 +153,13 @@ PROJECT_IDEAS = {
     "Android": "Build an Android app that fetches data from your FastAPI backend. Include auth and offline cache.",
 }
 
-# ============================================================
-# Implied Skills Logic
-# ============================================================
 IMPLIED_SKILLS = {
-    "GitHub": ["Git"],
-    "GitLab": ["Git"],
-    "React": ["JavaScript"],
-    "Angular": ["JavaScript", "TypeScript"],
-    "Vue.js": ["JavaScript"],
-    "Next.js": ["JavaScript", "React"],
-    "Node.js": ["JavaScript"],
-    "Express.js": ["Node.js"],
-    "Django": ["Python"],
-    "Flask": ["Python"],
-    "FastAPI": ["Python"],
-    "Spring": ["Java"],
-    "Spring Boot": ["Java", "Spring"],
-    ".NET": ["C#"],
-    "ASP.NET": ["C#", ".NET"],
+    "GitHub": ["Git"], "GitLab": ["Git"], "React": ["JavaScript"],
+    "Angular": ["JavaScript", "TypeScript"], "Vue.js": ["JavaScript"],
+    "Next.js": ["JavaScript", "React"], "Node.js": ["JavaScript"],
+    "Express.js": ["Node.js"], "Django": ["Python"], "Flask": ["Python"],
+    "FastAPI": ["Python"], "Spring": ["Java"], "Spring Boot": ["Java", "Spring"],
+    ".NET": ["C#"], "ASP.NET": ["C#", ".NET"],
 }
 
 # ============================================================
@@ -217,7 +169,6 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
     
-    # Add this line right here:
     WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
 
     st.title("🎯 Resume Gap Finder")
@@ -239,13 +190,18 @@ def main():
     
     with form_col2:
         with st.form("resume_form"):
-            st.subheader("1. Upload your resume")
-            uploaded = st.file_uploader(
-                "PDF or plain text",
-                type=["pdf", "txt"],
-                help="Upload your resume. Nothing is stored — it's parsed in memory only.",
-                label_visibility="collapsed"
-            )
+            st.subheader("1. Add your resume")
+            
+            # Input toggle for PDF or Text
+            input_method = st.radio("Choose input method:", ["Upload File", "Paste Text"], horizontal=True)
+            
+            uploaded = None
+            pasted_text = ""
+            
+            if input_method == "Upload File":
+                uploaded = st.file_uploader("PDF or plain text", type=["pdf", "txt"], label_visibility="collapsed")
+            else:
+                pasted_text = st.text_area("Paste your resume text here:", height=200, label_visibility="collapsed")
 
             st.subheader("2. Pick your target role")
             role_options = ["All software roles (overview)"] + sorted(
@@ -255,20 +211,33 @@ def main():
                 "Which kind of role are you targeting?",
                 role_options,
                 index=0,
-                help="Backend, Frontend, Full Stack, Mobile — pick what you want to apply to.",
                 label_visibility="collapsed"
             )
 
             submitted = st.form_submit_button("Analyze my resume", use_container_width=True)
 
     if submitted:
-        if not uploaded:
-            st.warning("Please upload a resume first.")
+        resume_text = ""
+        
+        if input_method == "Upload File":
+            if not uploaded:
+                st.warning("Please upload a resume first.")
+                return
+            if uploaded.type == "application/pdf":
+                resume_text = extract_text_from_pdf(uploaded.read())
+            else:
+                resume_text = uploaded.read().decode("utf-8", errors="ignore")
+        else:
+            if not pasted_text.strip():
+                st.warning("Please paste your resume text first.")
+                return
+            resume_text = pasted_text
+
+        if not resume_text.strip() or len(resume_text) < 100:
+            st.error("Couldn't extract enough text. If you uploaded a PDF, it might be an image. Try the 'Paste Text' option instead!")
             return
 
-        if uploaded.type == "application/pdf":
-            resume_text = extract_text_from_pdf(uploaded.read())
-                    # Ping Discord when someone actually uses the tool
+        # --- TRACKING: Ping Discord when someone actually uses the tool ---
         try:
             track_payload = {"content": f"🚀 **Someone just analyzed a resume!** Target Role: {role_choice}"}
             req = urllib.request.Request(
@@ -278,18 +247,11 @@ def main():
             )
             urllib.request.urlopen(req)
         except Exception:
-            pass # Don't crash the app if tracking fails
-        else:
-            resume_text = uploaded.read().decode("utf-8", errors="ignore")
+            pass 
+        # ------------------------------------------------------------------
 
-        if not resume_text.strip() or len(resume_text) < 100:
-            st.error("Couldn't extract text from your resume. Try a text version.")
-            return
-
-                # Extract skills normally
         resume_skills = extract_skills(resume_text, aliases)
         
-        # Apply implied skills logic
         implied_added = []
         for skill in list(resume_skills.keys()):
             if skill in IMPLIED_SKILLS:
@@ -312,7 +274,6 @@ def main():
         st.divider()
         st.header("Your gap report")
         
-                # Calculate match rate against the Top 10 core skills for this role
         top_10_core = benchmark_techs[:10] 
         core_matches = sum(1 for tech in top_10_core if tech["technology"] in resume_skills)
         match_rate = (core_matches / len(top_10_core)) * 100 if top_10_core else 0
@@ -380,7 +341,8 @@ def main():
             file_name="resume_gap_report.txt",
             mime="text/plain",
         )
-        # ============================================================
+
+    # ============================================================
     # FEEDBACK SECTION
     # ============================================================
     st.divider()
@@ -389,7 +351,6 @@ def main():
     
     col1, col2 = st.columns([1, 3])
     with col1:
-        # Native Streamlit star rating (1 to 5)
         stars = st.feedback("stars")
     with col2:
         comment = st.text_input("Any other feedback? (Optional)", placeholder="Your feedback here...")
@@ -398,10 +359,7 @@ def main():
         if stars is None and not comment:
             st.warning("Please leave a rating or a comment first!")
         else:
-            # DISCORD WEBHOOK URL (Paste yours here)
-            WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
-            
-            rating_str = f"{stars} Stars" if stars else "No rating"
+            rating_str = f"{stars} Stars" if stars is not None else "No rating"
             
             payload = {
                 "content": f"**New Feedback for Resume Gap Finder!**\n**Role:** {role_choice if 'role_choice' in locals() else 'None'}\n**Rating:** {rating_str}\n**Comment:** {comment}"
@@ -413,17 +371,13 @@ def main():
                     data=json.dumps(payload).encode(), 
                     headers={
                         "Content-Type": "application/json",
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" # This bypasses Discord's bot blocker
-    }
-)
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+                    }
+                )
                 urllib.request.urlopen(req)
                 st.success("✅ Thank you! Your feedback has been received.")
             except Exception as e:
                 st.error(f"Failed to send feedback: {e}")
-
-    # Privacy Footer
-    st.write("")
-    # ... (leave the st.caption privacy stuff exactly as it is) ...
 
     st.write("")
     st.caption("🔒 **Privacy:** Your resume is parsed in memory only. Nothing is stored, logged, or sent to any third party.")
