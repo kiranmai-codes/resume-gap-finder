@@ -171,7 +171,7 @@ def main():
     
          # Use st.secrets for security so bots don't steal our webhook
     try:
-        WEBHOOK_URL = st.secrets["https://discord.com/api/webhooks/1572609650443030638/9lfhrs9I403_G4WKqrxhCVi8Pqc9Ee6O4l2aIYgjliBu45sUrqFGFfbJgBTC0PJFvdeG"]
+        WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
     except Exception:
         WEBHOOK_URL = "" # Fallback if running locally without secrets
         
