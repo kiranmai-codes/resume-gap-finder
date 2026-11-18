@@ -169,8 +169,12 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
     
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1571844996813029529/3Dg7Uo7yeeuprCy8euTN-Ger8nFNbkYjnDQv_vQfPwP8y-CQcUybRR57HmmBYs2KyWh9" 
-
+         # Use st.secrets for security so bots don't steal our webhook
+    try:
+        WEBHOOK_URL = st.secrets["https://discord.com/api/webhooks/1572609650443030638/9lfhrs9I403_G4WKqrxhCVi8Pqc9Ee6O4l2aIYgjliBu45sUrqFGFfbJgBTC0PJFvdeG"]
+    except Exception:
+        WEBHOOK_URL = "" # Fallback if running locally without secrets
+        
     st.title("🎯 Resume Gap Finder")
     st.markdown(
         f"Compare your resume to **{artifact['benchmark_size']} verified "
