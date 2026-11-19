@@ -169,11 +169,11 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
     
-         # Use st.secrets for security so bots don't steal our webhook
+         
     try:
         WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
     except Exception:
-        WEBHOOK_URL = "" # Fallback if running locally without secrets
+        WEBHOOK_URL = ""
         
     st.title("🎯 Resume Gap Finder")
     st.markdown(
