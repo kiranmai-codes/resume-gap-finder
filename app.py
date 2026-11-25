@@ -297,21 +297,18 @@ def main():
                 st.success("You have every technology the benchmark cares about. 🎉")
             else:
                 st.markdown("### Your Top 5 Priorities")
-                st.caption("Focus on these first. Check them off as you complete them, or download your roadmap below.")
+                st.caption("Focus on these first. Copy the checklist below into Notion or your notes app to track your progress.")
                 
+                # Initialize the Markdown roadmap
                 roadmap_md = f"# My Learning Roadmap\n\nGenerated from the Resume Gap Finder Benchmark ({denominator} jobs).\n\n"
                 
                 for i, m in enumerate(missing[:5], 1):
                     pct = m["benchmark_share"] * 100
                     
-                    is_done = st.checkbox(f"**{i}. {m['technology']}** — required by {pct:.0f}% of jobs", key=f"check_{m['technology']}")
+                    # Add the skill to the Markdown roadmap
+                    roadmap_md += f"- [ ] **{m['technology']}** (Required by {pct:.0f}% of jobs)\n"
                     
-                    if is_done:
-                        roadmap_md += f"- [x] **{m['technology']}**\n"
-                    else:
-                        roadmap_md += f"- [ ] **{m['technology']}**\n"
-                    
-                    with st.expander(f"View details for {m['technology']}"):
+                    with st.expander(f"View project ideas for {m['technology']}"):
                         st.markdown(f"**Priority:** `{m['priority']}` · **Stability:** `{m['stability_tier']}`")
                         if m["technology"] in PROJECT_IDEAS:
                             tech_query = m['technology'].replace(' ', '+')
@@ -320,17 +317,22 @@ def main():
                             st.info(f"💡 **Project idea:** {PROJECT_IDEAS[m['technology']]}")
                             st.markdown(f"▶️ **[Watch a step-by-step YouTube tutorial for this project]({yt_search_url})**")
                             
+                            # Add the project to the Markdown roadmap
                             roadmap_md += f"  - *Project:* {PROJECT_IDEAS[m['technology']]}\n"
                         else:
                             st.info(f"No project template yet — search \"{m['technology']} beginner project\" on YouTube.")
 
                 st.write("")
+                st.markdown("#### 📋 Copy this checklist to Notion or Notes:")
+                
+                # Display the text so they can copy-paste it directly from the browser
+                st.code(roadmap_md, language="markdown")
+                
                 st.download_button(
-                    label="📥 Download Roadmap (Markdown)",
+                    label="📥 Download as .md file",
                     data=roadmap_md,
                     file_name="my_learning_roadmap.md",
-                    mime="text/markdown",
-                    help="Download this checklist and paste it into Notion, Obsidian, or your notes app to track your progress."
+                    mime="text/markdown"
                 )
 
                 if len(missing) > 5:
