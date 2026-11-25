@@ -169,7 +169,6 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
     
-    # Use st.secrets for security
     try:
         WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
     except Exception:
@@ -240,7 +239,6 @@ def main():
             st.error("Couldn't extract enough text. If you uploaded a PDF, it might be an image. Try the 'Paste Text' option instead!")
             return
 
-        # Ping Discord when someone actually uses the tool
         try:
             track_payload = {"content": f"🚀 **Someone just analyzed a resume!** Target Role: {role_choice}"}
             req = urllib.request.Request(
@@ -297,18 +295,12 @@ def main():
                 st.success("You have every technology the benchmark cares about. 🎉")
             else:
                 st.markdown("### Your Top 5 Priorities")
-                st.caption("Focus on these first. Copy the checklist below into Notion or your notes app to track your progress.")
-                
-                # Initialize the Markdown roadmap
-                roadmap_md = f"# My Learning Roadmap\n\nGenerated from the Resume Gap Finder Benchmark ({denominator} jobs).\n\n"
+                st.caption("Focus on these first. They are the highest-leverage skills for your target role.")
                 
                 for i, m in enumerate(missing[:5], 1):
                     pct = m["benchmark_share"] * 100
                     
-                    # Add the skill to the Markdown roadmap
-                    roadmap_md += f"- [ ] **{m['technology']}** (Required by {pct:.0f}% of jobs)\n"
-                    
-                    with st.expander(f"View project ideas for {m['technology']}"):
+                    with st.expander(f"{i}. {m['technology']} — required by {pct:.0f}% of jobs", expanded=(i == 1)):
                         st.markdown(f"**Priority:** `{m['priority']}` · **Stability:** `{m['stability_tier']}`")
                         if m["technology"] in PROJECT_IDEAS:
                             tech_query = m['technology'].replace(' ', '+')
@@ -316,24 +308,8 @@ def main():
                             
                             st.info(f"💡 **Project idea:** {PROJECT_IDEAS[m['technology']]}")
                             st.markdown(f"▶️ **[Watch a step-by-step YouTube tutorial for this project]({yt_search_url})**")
-                            
-                            # Add the project to the Markdown roadmap
-                            roadmap_md += f"  - *Project:* {PROJECT_IDEAS[m['technology']]}\n"
                         else:
                             st.info(f"No project template yet — search \"{m['technology']} beginner project\" on YouTube.")
-
-                st.write("")
-                st.markdown("#### 📋 Copy this checklist to Notion or Notes:")
-                
-                # Display the text so they can copy-paste it directly from the browser
-                st.code(roadmap_md, language="markdown")
-                
-                st.download_button(
-                    label="📥 Download as .md file",
-                    data=roadmap_md,
-                    file_name="my_learning_roadmap.md",
-                    mime="text/markdown"
-                )
 
                 if len(missing) > 5:
                     with st.expander(f"➕ View other {len(missing) - 5} lower-priority skills in the benchmark"):
