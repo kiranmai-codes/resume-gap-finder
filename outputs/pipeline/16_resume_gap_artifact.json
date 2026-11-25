@@ -3142,5 +3142,167 @@
       "n_jobs": 28,
       "n_technologies": 23
     }
+  },
+  "company_technologies": {
+    "Product / Startups": {
+      "n_jobs": 491,
+      "technologies": [
+        {
+          "technology": "JavaScript",
+          "job_count": 216,
+          "benchmark_share": 0.3910386965376782
+        },
+        {
+          "technology": "HTML",
+          "job_count": 179,
+          "benchmark_share": 0.32382892057026474
+        },
+        {
+          "technology": "CSS",
+          "job_count": 169,
+          "benchmark_share": 0.3095723014256619
+        },
+        {
+          "technology": "Java",
+          "job_count": 167,
+          "benchmark_share": 0.2953156822810591
+        },
+        {
+          "technology": "REST API",
+          "job_count": 154,
+          "benchmark_share": 0.2729124236252546
+        },
+        {
+          "technology": "Python",
+          "job_count": 145,
+          "benchmark_share": 0.2668024439918534
+        },
+        {
+          "technology": "SQL",
+          "job_count": 138,
+          "benchmark_share": 0.24236252545824846
+        },
+        {
+          "technology": "Git",
+          "job_count": 157,
+          "benchmark_share": 0.21384928716904278
+        },
+        {
+          "technology": "React",
+          "job_count": 115,
+          "benchmark_share": 0.19959266802443992
+        },
+        {
+          "technology": "MySQL",
+          "job_count": 99,
+          "benchmark_share": 0.15274949083503056
+        },
+        {
+          "technology": "Node.js",
+          "job_count": 79,
+          "benchmark_share": 0.1425661914460285
+        },
+        {
+          "technology": "OOP",
+          "job_count": 75,
+          "benchmark_share": 0.1364562118126273
+        },
+        {
+          "technology": "PHP",
+          "job_count": 62,
+          "benchmark_share": 0.1079429735234216
+        },
+        {
+          "technology": "MongoDB",
+          "job_count": 68,
+          "benchmark_share": 0.10590631364562118
+        },
+        {
+          "technology": "GitHub",
+          "job_count": 74,
+          "benchmark_share": 0.10183299389002037
+        }
+      ]
+    },
+    "IT Services / Consulting": {
+      "n_jobs": 27,
+      "technologies": [
+        {
+          "technology": "REST API",
+          "job_count": 12,
+          "benchmark_share": 0.4444444444444444
+        },
+        {
+          "technology": "JavaScript",
+          "job_count": 10,
+          "benchmark_share": 0.37037037037037035
+        },
+        {
+          "technology": "HTML",
+          "job_count": 9,
+          "benchmark_share": 0.3333333333333333
+        },
+        {
+          "technology": "SQL",
+          "job_count": 9,
+          "benchmark_share": 0.3333333333333333
+        },
+        {
+          "technology": "Python",
+          "job_count": 9,
+          "benchmark_share": 0.2962962962962963
+        },
+        {
+          "technology": "CSS",
+          "job_count": 8,
+          "benchmark_share": 0.2962962962962963
+        },
+        {
+          "technology": "React",
+          "job_count": 8,
+          "benchmark_share": 0.2962962962962963
+        },
+        {
+          "technology": "Java",
+          "job_count": 9,
+          "benchmark_share": 0.25925925925925924
+        },
+        {
+          "technology": "AWS",
+          "job_count": 8,
+          "benchmark_share": 0.2222222222222222
+        },
+        {
+          "technology": "PostgreSQL",
+          "job_count": 7,
+          "benchmark_share": 0.2222222222222222
+        },
+        {
+          "technology": "Microservices",
+          "job_count": 6,
+          "benchmark_share": 0.2222222222222222
+        },
+        {
+          "technology": "Git",
+          "job_count": 6,
+          "benchmark_share": 0.18518518518518517
+        },
+        {
+          "technology": "OOP",
+          "job_count": 5,
+          "benchmark_share": 0.18518518518518517
+        },
+        {
+          "technology": "GitHub",
+          "job_count": 5,
+          "benchmark_share": 0.18518518518518517
+        },
+        {
+          "technology": "MySQL",
+          "job_count": 4,
+          "benchmark_share": 0.14814814814814814
+        }
+      ]
+    }
   }
 }

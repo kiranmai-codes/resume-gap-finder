@@ -80,7 +80,7 @@ def main():
 
     # 16
     run(16, "Resume Gap Artifact", stage_16_resume_gap_artifact,
-        job_df, freq_dict)
+        job_df, tech_df, freq_dict)
 
     # ── Funnel report ──
     print()

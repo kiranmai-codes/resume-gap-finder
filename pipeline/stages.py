@@ -1,14 +1,4 @@
-"""The 16-stage benchmark pipeline. Each stage is auditable.
-
-Every stage:
-  - Takes a DataFrame
-  - Returns (passing_df, rejected_df, stats_dict)
-  - Saves passing and rejected to outputs/pipeline/
-
-Steps 9-13 are atomic: technologies_from_description() emits all five
-attributes (normalized name, evidence, requirement type, context) per row.
-Splitting them would require 5 passes over the same text.
-"""
+"""The 16-stage benchmark pipeline. Each stage is auditable."""
 import json
 import re
 from collections import defaultdict
@@ -39,6 +29,23 @@ OUT.mkdir(parents=True, exist_ok=True)
 def _save(df, name):
     if df is not None and len(df):
         df.to_csv(OUT / f"{name}.csv", index=False, encoding="utf-8-sig")
+
+
+def classify_company(company_name):
+    if not isinstance(company_name, str):
+        return "Other"
+    name = company_name.lower()
+    
+    # MAANG / Top Tier Global Product
+    if any(x in name for x in ['google', 'amazon', 'microsoft', 'meta', 'apple', 'netflix', 'adobe', 'uber', 'atlassian', 'salesforce', 'oracle', 'vmware', 'paypal', 'stripe']):
+        return "MAANG / Top Product"
+        
+    # Indian IT Services / Consulting
+    if any(x in name for x in ['tcs', 'tata consultancy', 'infosys', 'wipro', 'cognizant', 'accenture', 'capgemini', 'hcl', 'tech mahindra', 'ltimindtree', 'l&t', 'mphasis', 'ibm', 'deloitte', 'pwc', 'ey', 'kpmg', 'genpact']):
+        return "IT Services / Consulting"
+        
+    # Everything else is likely a Product Startup / Mid-size
+    return "Product / Startups"
 
 
 # ─────────────────────────────────────────────────────────────
@@ -225,8 +232,7 @@ def stage_08_role_family(df):
 
 
 # ─────────────────────────────────────────────────────────────
-# Stages 9-13 — Technology Extraction + Normalization + Evidence
-#                + Requirement Type + Context (atomic)
+# Stages 9-13 — Technology Extraction
 # ─────────────────────────────────────────────────────────────
 def stages_09_13_technology(df):
     rows = []
@@ -240,8 +246,6 @@ def stages_09_13_technology(df):
                 "job_title": job["job_title"],
                 "company_name": job["company_name"],
                 "role_family": job["__role_family"],
-                # Step 9: technology, Step 10: normalized, Step 11: evidence,
-                # Step 12: requirement_type, Step 13: context
                 **t,
             })
     tech_df = pd.DataFrame(rows)
@@ -254,14 +258,11 @@ def stages_09_13_technology(df):
 
 
 # ─────────────────────────────────────────────────────────────
-# Stage 14 — Benchmark (final eligible job set)
+# Stage 14 — Benchmark
 # ─────────────────────────────────────────────────────────────
 def stage_14_benchmark(job_df, tech_df):
-    # By this point, all gates have passed. Benchmark = the jobs we have.
-    # Preserve the tier annotation.
     job_df_out = job_df.copy()
 
-    # Dedupe tech rows per (job, technology) — keep highest requirement rank
     rank = {"mentioned": 1, "preferred": 2, "stack_required": 3, "required": 4}
     tech_df = tech_df.copy()
     tech_df["__rank"] = tech_df["requirement_type"].map(rank).fillna(0)
@@ -286,10 +287,9 @@ def stage_14_benchmark(job_df, tech_df):
 
 
 # ─────────────────────────────────────────────────────────────
-# Stage 15 — Frequency + Stability (per role family)
+# Stage 15 — Frequency + Stability
 # ─────────────────────────────────────────────────────────────
 def _compute_freq(job_df, tech_df, n_boot=200):
-    """Frequency + bootstrap stability for one job subset."""
     if len(tech_df) == 0 or len(job_df) == 0:
         return pd.DataFrame()
 
@@ -309,7 +309,6 @@ def _compute_freq(job_df, tech_df, n_boot=200):
         lambda x: "high" if x >= 0.30
         else ("medium" if x >= 0.15 else "low"))
 
-    # Bootstrap stability
     rng = np.random.default_rng(42)
     job_ids = job_df["source_job_id"].astype(str).tolist()
     techs_by_job = (tech_df.groupby("source_job_id")["technology"]
@@ -346,20 +345,10 @@ def _compute_freq(job_df, tech_df, n_boot=200):
 
 
 def stage_15_frequency_stability(job_df, tech_df, n_boot=200, min_sample=10):
-    """Produces a frequency+stability table per role family + overall.
-
-    Returns:
-        freq_dict: {"overall": DataFrame, "<Family>": DataFrame, ...}
-        extra:     empty DataFrame
-        stats:     summary
-    """
     freq_dict = {}
-
-    # Overall benchmark
     overall = _compute_freq(job_df, tech_df, n_boot)
     freq_dict["overall"] = overall
 
-    # Per role family — only those with enough sample
     skipped = []
     for family in sorted(job_df["__role_family"].unique()):
         family_jobs = job_df[job_df["__role_family"] == family]
@@ -378,12 +367,10 @@ def stage_15_frequency_stability(job_df, tech_df, n_boot=200, min_sample=10):
 
         freq_dict[family] = _compute_freq(family_jobs, family_tech, n_boot)
 
-    # Save all tables
     for key, df in freq_dict.items():
         safe_key = key.replace("/", "_").replace(" ", "_").lower()
         _save(df, f"15_freq_{safe_key}")
 
-    # Also save a role-family summary
     summary_rows = []
     for family, freq in freq_dict.items():
         if family == "overall":
@@ -410,14 +397,13 @@ def stage_15_frequency_stability(job_df, tech_df, n_boot=200, min_sample=10):
 
 
 # ─────────────────────────────────────────────────────────────
-# Stage 16 — Resume Gap Finder artifact (per role family)
+# Stage 16 — Resume Gap Finder artifact
 # ─────────────────────────────────────────────────────────────
-def stage_16_resume_gap_artifact(job_df, freq_dict):
+def stage_16_resume_gap_artifact(job_df, tech_df, freq_dict):
     role_freq = (job_df.groupby("__role_family", dropna=False)
                  .size().reset_index(name="job_count"))
     role_freq["job_share"] = role_freq["job_count"] / max(len(job_df), 1)
 
-    # Build per-family sub-artifacts
     role_technologies = {}
     role_meta = {}
     for family, freq in freq_dict.items():
@@ -432,6 +418,30 @@ def stage_16_resume_gap_artifact(job_df, freq_dict):
             "n_technologies": len(freq),
         }
 
+    # Company Type Breakdown
+    job_df["company_type"] = job_df["company_name"].apply(classify_company)
+    
+    company_techs = {}
+    for ctype in job_df["company_type"].unique():
+        ctype_jobs = job_df[job_df["company_type"] == ctype]
+        ctype_ids = set(ctype_jobs["source_job_id"].astype(str))
+        
+        ctype_tech = tech_df[tech_df["source_job_id"].astype(str).isin(ctype_ids)]
+        
+        if len(ctype_jobs) >= 5:
+            denom = len(ctype_jobs)
+            freq = ctype_tech.groupby("technology").agg(
+                job_count=("source_job_id", "nunique"),
+                benchmark_share=("requirement_type", lambda s: s.isin(["required", "stack_required"]).sum())
+            ).reset_index()
+            freq["benchmark_share"] = freq["benchmark_share"] / denom
+            freq = freq.sort_values("benchmark_share", ascending=False)
+            
+            company_techs[ctype] = {
+                "n_jobs": int(denom),
+                "technologies": freq.head(15).to_dict(orient="records")
+            }
+
     artifact = {
         "benchmark_size": int(len(job_df)),
         "confirmed_tier": int((job_df["__tier"] == "confirmed").sum()),
@@ -441,15 +451,14 @@ def stage_16_resume_gap_artifact(job_df, freq_dict):
             job_df.groupby("source_portal").size().to_dict()),
         "role_family_distribution": role_freq.to_dict(orient="records"),
 
-        # Overall benchmark (backward-compatible shape)
         "technologies": freq_dict["overall"][[
             "technology", "job_count", "job_share", "benchmark_share",
             "priority", "stability_tier"
         ]].to_dict(orient="records"),
 
-        # Role-family-specific tables
         "role_technologies": role_technologies,
         "role_meta": role_meta,
+        "company_technologies": company_techs,
     }
 
     path = OUT / "16_resume_gap_artifact.json"
@@ -460,5 +469,6 @@ def stage_16_resume_gap_artifact(job_df, freq_dict):
         "artifact_path": str(path),
         "overall_techs": len(artifact["technologies"]),
         "role_families": len(role_technologies),
+        "company_types": len(company_techs),
     }
     return freq_dict, pd.DataFrame(), stats
