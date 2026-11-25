@@ -288,7 +288,7 @@ def main():
         st.markdown(f"Comparing against **{denominator} jobs** in the {scope_label} benchmark.")
         st.write("")
 
-        tab1, tab2 = st.tabs(["⚠️ What to learn", "✅ What you have"])
+        tab1, tab2, tab3 = st.tabs(["⚠️ What to learn", "✅ What you have", "🏢 Company Targets"])
 
         with tab1:
             if not missing:
@@ -326,6 +326,25 @@ def main():
                 for h in have[:15]:
                     pct = h["benchmark_share"] * 100
                     st.markdown(f"- **{h['technology']}** — in {pct:.0f}% of jobs ({h['priority']} priority)")
+
+        with tab3:
+            st.markdown("### What do different companies actually want?")
+            st.caption("Freshers often ask if they should prep for MAANG (DSA) or Service companies (Java/Spring). Here is the data.")
+            
+            company_data = artifact.get("company_technologies", {})
+            
+            if not company_data:
+                st.info("Not enough data to segment by company type yet.")
+            else:
+                cols = st.columns(len(company_data))
+                for idx, (ctype, data) in enumerate(company_data.items()):
+                    with cols[idx]:
+                        st.markdown(f"#### {ctype}")
+                        st.caption(f"Based on {data['n_jobs']} jobs")
+                        
+                        for t in data["technologies"][:5]:
+                            pct = t["benchmark_share"] * 100
+                            st.markdown(f"- **{t['technology']}** — required by {pct:.0f}%")
 
         st.divider()
         st.subheader("How to use this")
