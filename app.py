@@ -88,7 +88,7 @@ def extract_text_from_pdf(pdf_bytes):
         from pypdf import PdfReader
         reader = PdfReader(io.BytesIO(pdf_bytes))
         return "\n".join(page.extract_text() or "" for page in reader.pages)
-    except Exception as e:
+    except Exception:
         return ""
 
 def extract_skills(resume_text, aliases):
@@ -128,29 +128,29 @@ def compute_gap(resume_skills, benchmark_techs):
     return have, missing
 
 PROJECT_IDEAS = {
-    "JavaScript": "Build a to-do list app with vanilla JS (DOM, fetch API, localStorage). Push to GitHub with a README.",
-    "Java": "Build a command-line inventory manager using Java + JDBC + MySQL. Add JUnit tests.",
-    "HTML": "Build a responsive portfolio site with HTML5 semantic tags + CSS grid. Deploy to Netlify.",
-    "Python": "Build a FastAPI REST API that fetches from a public API, caches with Redis, returns JSON. Deploy with Docker.",
-    "CSS": "Build a 3-page responsive site using only CSS (no frameworks). Add mobile menu + dark mode.",
-    "REST API": "Build a CRUD REST API with GET/POST/PUT/DELETE, input validation, and error responses.",
-    "SQL": "Build a movie-rating database (3+ tables, foreign keys). Queries for top-rated, per-genre rankings.",
-    "React": "Build a weather dashboard with React hooks + fetch. Include city search, loading states, error handling.",
-    "Git": "Fork an open-source repo, make 3 meaningful commits, submit a PR with clear commit messages.",
-    "OOP": "Build a small library system using classes, inheritance, interfaces. Include UML diagram in README.",
-    "Node.js": "Build a real-time chat app with Node.js + Socket.io + Express. Include rooms and message history.",
-    "MySQL": "Build a booking system (users, bookings, slots) with normalized schema. Include migrations and seed data.",
-    "MongoDB": "Build a task manager with MongoDB + Express + React. Use aggregation pipelines for filtering.",
-    "PostgreSQL": "Extend your SQL project to PostgreSQL. Add full-text search, a view, and a stored procedure.",
-    "Angular": "Build an admin dashboard with Angular + RxJS + Material. Include routing, guards, form validation.",
-    "Spring": "Build a library management API with Spring Boot + JPA + MySQL. Include Swagger docs and tests.",
-    "Spring Boot": "Build a payment gateway API with Spring Boot. Add JWT auth, Hibernate ORM, and integration tests.",
-    "Docker": "Containerize your FastAPI/Node project. Write Dockerfile + docker-compose.yml. Deploy to a cloud VM.",
-    "AWS": "Deploy one of your projects to AWS EC2 + RDS. Include a load balancer and a managed DB.",
-    "TypeScript": "Migrate one of your JavaScript projects to TypeScript. Add strict mode + interfaces for all API responses.",
-    "Django": "Build a blog with Django + PostgreSQL. Include user auth, admin panel, and deployment to Render.",
-    "Kotlin": "Build a small Android app with Kotlin + Jetpack Compose. Publish to Play Store internal testing.",
-    "Android": "Build an Android app that fetches data from your FastAPI backend. Include auth and offline cache.",
+    "JavaScript": "Build a to-do list app with vanilla JS.",
+    "Java": "Build a CLI inventory manager using Java + JDBC.",
+    "HTML": "Build a responsive portfolio site.",
+    "Python": "Build a FastAPI REST API with Redis.",
+    "CSS": "Build a 3-page responsive site using only CSS.",
+    "REST API": "Build a CRUD REST API with validation.",
+    "SQL": "Build a movie-rating database (3+ tables).",
+    "React": "Build a weather dashboard with React hooks.",
+    "Git": "Fork a repo, make 3 commits, submit a PR.",
+    "OOP": "Build a small library system using classes.",
+    "Node.js": "Build a real-time chat app with Socket.io.",
+    "MySQL": "Build a booking system with normalized schema.",
+    "MongoDB": "Build a task manager with MongoDB + Express.",
+    "PostgreSQL": "Extend your SQL project to PostgreSQL.",
+    "Angular": "Build an admin dashboard with Angular.",
+    "Spring": "Build a library API with Spring Boot.",
+    "Spring Boot": "Build a payment gateway API.",
+    "Docker": "Containerize your FastAPI/Node project.",
+    "AWS": "Deploy to AWS EC2 + RDS.",
+    "TypeScript": "Migrate a JS project to TypeScript.",
+    "Django": "Build a blog with Django + PostgreSQL.",
+    "Kotlin": "Build an Android app with Jetpack Compose.",
+    "Android": "Build an Android app with auth.",
 }
 
 IMPLIED_SKILLS = {
@@ -169,12 +169,12 @@ def main():
     artifact = load_benchmark()
     aliases, categories = load_taxonomy()
     
-         # Use st.secrets for security so bots don't steal our webhook
+    # Use st.secrets for security
     try:
         WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
     except Exception:
-        WEBHOOK_URL = "" # Fallback if running locally without secrets
-        
+        WEBHOOK_URL = "" 
+
     st.title("🎯 Resume Gap Finder")
     st.markdown(
         f"Compare your resume to **{artifact['benchmark_size']} verified "
@@ -196,7 +196,6 @@ def main():
         with st.form("resume_form"):
             st.subheader("1. Add your resume")
             
-            # Input toggle for PDF or Text
             input_method = st.radio("Choose input method:", ["Upload File", "Paste Text"], horizontal=True)
             
             uploaded = None
@@ -241,7 +240,7 @@ def main():
             st.error("Couldn't extract enough text. If you uploaded a PDF, it might be an image. Try the 'Paste Text' option instead!")
             return
 
-        # --- TRACKING: Ping Discord when someone actually uses the tool ---
+        # Ping Discord when someone actually uses the tool
         try:
             track_payload = {"content": f"🚀 **Someone just analyzed a resume!** Target Role: {role_choice}"}
             req = urllib.request.Request(
@@ -252,7 +251,6 @@ def main():
             urllib.request.urlopen(req)
         except Exception:
             pass 
-        # ------------------------------------------------------------------
 
         resume_skills = extract_skills(resume_text, aliases)
         
@@ -299,16 +297,41 @@ def main():
                 st.success("You have every technology the benchmark cares about. 🎉")
             else:
                 st.markdown("### Your Top 5 Priorities")
-                st.caption("Focus on these first. They are the highest-leverage skills for your target role.")
+                st.caption("Focus on these first. Check them off as you complete them, or download your roadmap below.")
+                
+                roadmap_md = f"# My Learning Roadmap\n\nGenerated from the Resume Gap Finder Benchmark ({denominator} jobs).\n\n"
                 
                 for i, m in enumerate(missing[:5], 1):
                     pct = m["benchmark_share"] * 100
-                    with st.expander(f"{i}. {m['technology']} — required by {pct:.0f}% of jobs", expanded=(i == 1)):
+                    
+                    is_done = st.checkbox(f"**{i}. {m['technology']}** — required by {pct:.0f}% of jobs", key=f"check_{m['technology']}")
+                    
+                    if is_done:
+                        roadmap_md += f"- [x] **{m['technology']}**\n"
+                    else:
+                        roadmap_md += f"- [ ] **{m['technology']}**\n"
+                    
+                    with st.expander(f"View details for {m['technology']}"):
                         st.markdown(f"**Priority:** `{m['priority']}` · **Stability:** `{m['stability_tier']}`")
                         if m["technology"] in PROJECT_IDEAS:
+                            tech_query = m['technology'].replace(' ', '+')
+                            yt_search_url = f"https://www.youtube.com/results?search_query=learn+{tech_query}+real+world+project+for+beginners"
+                            
                             st.info(f"💡 **Project idea:** {PROJECT_IDEAS[m['technology']]}")
+                            st.markdown(f"▶️ **[Watch a step-by-step YouTube tutorial for this project]({yt_search_url})**")
+                            
+                            roadmap_md += f"  - *Project:* {PROJECT_IDEAS[m['technology']]}\n"
                         else:
                             st.info(f"No project template yet — search \"{m['technology']} beginner project\" on YouTube.")
+
+                st.write("")
+                st.download_button(
+                    label="📥 Download Roadmap (Markdown)",
+                    data=roadmap_md,
+                    file_name="my_learning_roadmap.md",
+                    mime="text/markdown",
+                    help="Download this checklist and paste it into Notion, Obsidian, or your notes app to track your progress."
+                )
 
                 if len(missing) > 5:
                     with st.expander(f"➕ View other {len(missing) - 5} lower-priority skills in the benchmark"):
@@ -334,17 +357,6 @@ def main():
             3. Add both projects to your resume with GitHub links
             4. Come back and re-run this after you've built them
         """)
-
-        report_text = f"RESUME GAP REPORT\nScope: {scope_label} ({denominator} jobs)\n\nTOP GAPS TO LEARN:\n"
-        for i, m in enumerate(missing[:5], 1):
-            report_text += f"{i}. {m['technology']} ({m['benchmark_share']*100:.0f}%)\n"
-            
-        st.download_button(
-            "📥 Download report as text",
-            data=report_text,
-            file_name="resume_gap_report.txt",
-            mime="text/plain",
-        )
 
     # ============================================================
     # FEEDBACK SECTION
